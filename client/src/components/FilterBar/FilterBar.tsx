@@ -55,10 +55,10 @@ export const FilterBar = () => {
     <Box className="containerFilterBar">
       <p className="titleFilterBar">Units | La Vega Baja</p>
       <Suspense fallback={<h3>Loading sectors info...</h3>}>
-        <UnitsBtnsMenu 
-          dataSectors={dataSectors} 
-          openMenuUnits={openMenuUnits} 
-          handleMenuUnits={handleMenuUnits} 
+        <UnitsBtnsMenu
+          dataSectors={dataSectors}
+          openMenuUnits={openMenuUnits}
+          handleMenuUnits={handleMenuUnits}
         />
       </Suspense>
     </Box>
