@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "deviceId": 3061,
+    "name": "Sector 1",
+    "state": 1,
+    "program": 1,
+    "area": 15000,
+    "crop": 1,
+    "pumps": [1]
+  },
+  {
+    "id": 2,
+    "deviceId": 3061,
+    "name": "Sector 2",
+    "state": 0,
+    "program": false,
+    "area": 14000,
+    "crop": 1,
+    "pumps": [1]
+  },
+  {
+    "id": 3,
+    "deviceId": 3061,
+    "name": "Sector 3",
+    "state": 0,
+    "program": false,
+    "area": 16000,
+    "crop": 1,
+    "pumps": [1]
+  },
+  {
+    "id": 4,
+    "deviceId": 3061,
+    "name": "Sector 4",
+    "state": 1,
+    "program": 3,
+    "area": 16000,
+    "crop": 1,
+    "pumps": [1]
+  },
+  {
+    "id": 5,
+    "deviceId": 3061,
+    "name": "Sector 5",
+    "state": 0,
+    "program": false,
+    "area": 10000,
+    "crop": 1,
+    "pumps": [1]
+  }
+]

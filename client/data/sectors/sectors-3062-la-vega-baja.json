@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "deviceId": 3062,
+    "name": "Sector 1",
+    "state": 1,
+    "program": 3,
+    "area": 12300,
+    "crop": 2,
+    "pumps": [1]
+  },
+  {
+    "id": 2,
+    "deviceId": 3062,
+    "name": "Sector 2",
+    "state": 0,
+    "program": false,
+    "area": 14660,
+    "crop": 2,
+    "pumps": [1]
+  },
+  {
+    "id": 3,
+    "deviceId": 3062,
+    "name": "Sector 3",
+    "state": 1,
+    "program": 1,
+    "area": 10400,
+    "crop": 2,
+    "pumps": [1]
+  }
+]

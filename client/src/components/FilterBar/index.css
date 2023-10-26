@@ -1,0 +1,16 @@
+.containerFilterBar {
+  width: 280px;
+  height: calc(100vh - 80px);
+  background-color: #2f3542;
+  border-radius: 10px 0px 0 10px;
+  position: absolute;
+  top: 7%;
+  left: 10.4%;
+}
+
+.titleFilterBar {
+  color: #d9d9d9;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 24px;
+  padding-left: 12px;
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "pk": {
+      "deviceId": 3063,
+      "id": 1
+    },
+    "sector1": 0,
+    "sector2": 0,
+    "sector3": 0,
+    "start": 0,
+    "value": 0,
+    "startActivationHour": 0,
+    "endActivationHour": 0,
+    "xIrrigationTime": 0,
+    "xValue": 0,
+    "priority": 0,
+    "status": 0,
+    "flow": null
+  },
+  {
+    "pk": {
+      "deviceId": 3063,
+      "id": 2
+    },
+    "sector1": 0,
+    "sector2": 0,
+    "sector3": 0,
+    "start": 0,
+    "value": 0,
+    "startActivationHour": 0,
+    "endActivationHour": 0,
+    "xIrrigationTime": 0,
+    "xValue": 0,
+    "priority": 0,
+    "status": 0,
+    "flow": null
+  },
+  {
+    "pk": {
+      "deviceId": 3063,
+      "id": 3
+    },
+    "sector1": 0,
+    "sector2": 0,
+    "sector3": 0,
+    "start": 0,
+    "value": 0,
+    "startActivationHour": 0,
+    "endActivationHour": 0,
+    "xIrrigationTime": 0,
+    "xValue": 0,
+    "priority": 0,
+    "status": 0,
+    "flow": null
+  },
+  {
+    "pk": {
+      "deviceId": 3063,
+      "id": 4
+    },
+    "sector1": 0,
+    "sector2": 0,
+    "sector3": 0,
+    "start": 0,
+    "value": 0,
+    "startActivationHour": 0,
+    "endActivationHour": 0,
+    "xIrrigationTime": 0,
+    "xValue": 0,
+    "priority": 0,
+    "status": 0,
+    "flow": null
+  },
+  {
+    "pk": {
+      "deviceId": 3063,
+      "id": 5
+    },
+    "sector1": 0,
+    "sector2": 0,
+    "sector3": 0,
+    "start": 0,
+    "value": 0,
+    "startActivationHour": 0,
+    "endActivationHour": 0,
+    "xIrrigationTime": 0,
+    "xValue": 0,
+    "priority": 0,
+    "status": 0,
+    "flow": null
+  }
+]
