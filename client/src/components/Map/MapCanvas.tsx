@@ -11,7 +11,7 @@ import { handleCursorMap } from "../../utils/handleCursorMap.ts";
 import { handleTooltip } from "../../utils/handleTooltipMap.ts";
 import { useLayers } from '../../hooks/layers/useLayers.ts'
 import { useSelector } from "react-redux";
-import { Button } from "@mui/material";
+import FilterButtons from "../FilterButtons/FilterButtons.tsx";
 
 const STYLE_MAP = {
 	height: "calc(100vh - 180px)",
@@ -29,6 +29,7 @@ export const MapCanvas = () => {
   type StateFilter = [boolean, (newFilter: boolean) => void];
   
   const [filterByIrrigating, setFilterByIrrigating]: StateFilter = useState(false);
+  const [filterByCrop, setFilterByCrop]: StateFilter = useState(false)
 
   if (loadingMap || loadingAreas) return <h2>Loading map...</h2>
   if (errorMap) return <p>{errorMap}</p>
@@ -49,8 +50,14 @@ export const MapCanvas = () => {
     }
   }
 
-  const handlefilter = () => {
+  const handleIrrigating = () => {
+    if (filterByCrop) setFilterByCrop(false)
     setFilterByIrrigating((currentValue) => !currentValue)
+  }
+
+  const handleCrops = () => {
+    if (filterByIrrigating) setFilterByIrrigating(false)
+    setFilterByCrop((currentValue) => !currentValue)
   }
 
   return(
@@ -59,7 +66,8 @@ export const MapCanvas = () => {
         initialViewState={getInitialViewState(dataMap)}
         controller={true}
         style={STYLE_MAP}
-        layers={[generateLayersMap(dataAreas, filterByIrrigating), layersHighlights]}
+        layers={[generateLayersMap(dataAreas, filterByIrrigating, filterByCrop), layersHighlights]}
+        // layers={[generateCropsLayers(dataAreas, filterByCrop)]}
         getCursor={(event) => handleCursorMap(event)}
         getTooltip={(info) => info.object && handleTooltip(info.object)}
         onHover={(event) => {
@@ -79,22 +87,12 @@ export const MapCanvas = () => {
           minZoom={13}
           maxZoom={17}
         />
-        <Button
-          id={"irrigating"}
-          onClick={handlefilter}
-          sx={{
-            width: "120px",
-            height: "50px",
-            backgroundColor: "rgba(24, 144, 255, .8)",
-            color: "#d9d9d9",
-            border: "2px solid #d9d9d9",
-            ":hover": {
-              backgroundColor: "rgba(24, 144, 255, 1)",
-            }
-          }}
-        >
-          {"Irrigating"}
-        </Button>
+        <FilterButtons 
+          handleIrrigating={handleIrrigating} 
+          handleCrops={handleCrops} 
+          filterByIrrigating={filterByIrrigating}
+          filterByCrop={filterByCrop}
+        />
       </DeckGl>
     </Suspense>
   )

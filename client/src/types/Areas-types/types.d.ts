@@ -12,6 +12,7 @@ export type AreasProps = {
     deviceName: string,
     irrigating: boolean,
     sector: number,
+    crop: number
   },
   type: string
 }
