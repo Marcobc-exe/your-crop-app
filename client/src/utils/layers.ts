@@ -20,7 +20,7 @@ export const generateLayersMap = (dataAreas: DataAreas, filterBy: boolean, filte
   })
 }
 
-export const generateHighlightsLayersMap = (dataAreas: DataAreas, object: AreasProps, setLayersHighlights): void => {
+export const generateHighlightsLayersMap = (dataAreas: DataAreas, object: AreasProps): void => {
   const foundAreas = dataAreas.features.filter((areas: AreasProps) => 
     areas.properties.sector === object.properties.sector &&
     areas.properties.deviceName === object.properties.deviceName
@@ -39,7 +39,7 @@ export const generateHighlightsLayersMap = (dataAreas: DataAreas, object: AreasP
     });
   });
 
-  setLayersHighlights(filter);
+  return filter;
 }
 
 // export const generateCropsLayers = (dataAreas: DataAreas, filterByCrop: boolean) => {

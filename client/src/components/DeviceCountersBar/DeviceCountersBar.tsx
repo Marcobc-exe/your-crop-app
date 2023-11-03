@@ -1,4 +1,4 @@
-import useUnits from "../../hooks/controllers/useUnits";
+import { useUnits } from "../../hooks/controllers/useUnits";
 import { Box, Grid } from "@mui/material";
 import { UnitType } from "../../types/Units-types/types";
 import "./index.css";

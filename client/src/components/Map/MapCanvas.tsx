@@ -9,9 +9,9 @@ import useAreas from "../../hooks/controllers/useAreas.ts";
 import { generateHighlightsLayersMap, generateLayersMap } from "../../utils/layers.ts";
 import { handleCursorMap } from "../../utils/handleCursorMap.ts";
 import { handleTooltip } from "../../utils/handleTooltipMap.ts";
-import { useLayers } from '../../hooks/layers/useLayers.ts'
-import { useSelector } from "react-redux";
 import FilterButtons from "../FilterButtons/FilterButtons.tsx";
+import { useMarkers } from "../../hooks/controllers/useUnits.ts";
+import { generateMarkers } from '../../utils/markers.ts';
 
 const STYLE_MAP = {
 	height: "calc(100vh - 180px)",
@@ -23,17 +23,20 @@ const STYLE_MAP = {
 export const MapCanvas = () => {
   const { dataMap, errorMap, loadingMap } = useMap();
   const { dataAreas, errorAreas, loadingAreas } = useAreas();
-  const { setLayersHighlights } = useLayers();
-  const { layersHighlights } = useSelector((state) => state.areas);
+  const { dataMarkers, errorMarkers, loadingMarkers } = useMarkers();
 
   type StateFilter = [boolean, (newFilter: boolean) => void];
   
   const [filterByIrrigating, setFilterByIrrigating]: StateFilter = useState(false);
   const [filterByCrop, setFilterByCrop]: StateFilter = useState(false)
+  const [showUnits, setShowUnits]: StateFilter = useState(false)
 
-  if (loadingMap || loadingAreas) return <h2>Loading map...</h2>
+  const [highlights, setHighlights] = useState([]);
+
+  if (loadingMap || loadingAreas || loadingMarkers) return <h2>Loading map...</h2>
   if (errorMap) return <p>{errorMap}</p>
   if (errorAreas) return <p>{errorAreas}</p>
+  if (errorMarkers) return <p>{errorMarkers}</p>
 
   function getInitialViewState(dataMap: MapType) {
     const coordinates: string[] = dataMap.center.split(";");
@@ -60,22 +63,26 @@ export const MapCanvas = () => {
     setFilterByCrop((currentValue) => !currentValue)
   }
 
+  const handleUnits = () => {
+    setShowUnits((currentValue) => !currentValue);
+  }
+
   return(
     <Suspense fallback={<h2>Loading map...</h2>}>
       <DeckGl
         initialViewState={getInitialViewState(dataMap)}
         controller={true}
         style={STYLE_MAP}
-        layers={[generateLayersMap(dataAreas, filterByIrrigating, filterByCrop), layersHighlights]}
-        // layers={[generateCropsLayers(dataAreas, filterByCrop)]}
+        layers={[generateLayersMap(dataAreas, filterByIrrigating, filterByCrop), showUnits && generateMarkers(dataMarkers), highlights]}
         getCursor={(event) => handleCursorMap(event)}
         getTooltip={(info) => info.object && handleTooltip(info.object)}
         onHover={(event) => {
           if (event.object) {
-            generateHighlightsLayersMap(dataAreas, event.object, setLayersHighlights) // set highlights
+            const sectorsHighlights = generateHighlightsLayersMap(dataAreas, event.object) // set highlights
+            setHighlights(sectorsHighlights);
           } else {
-            if (layersHighlights.length > 0) {
-              setLayersHighlights([]) // clean highlights
+            if (highlights.length > 0) {
+              setHighlights([]);
             }
           }
         }}
@@ -90,8 +97,10 @@ export const MapCanvas = () => {
         <FilterButtons 
           handleIrrigating={handleIrrigating} 
           handleCrops={handleCrops} 
+          handleUnits={handleUnits}
           filterByIrrigating={filterByIrrigating}
           filterByCrop={filterByCrop}
+          showUnits={showUnits}
         />
       </DeckGl>
     </Suspense>

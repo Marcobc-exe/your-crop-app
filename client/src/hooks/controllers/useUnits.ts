@@ -1,7 +1,7 @@
 import useSWR from "swr";
-import getUnits from "../../api/unitsStore";
+import { getUnits, getUnitsMarkers } from "../../api/unitsStore";
 
-function useUnits() {
+const useUnits = () => {
   const { data, error, isLoading } = useSWR(
     "units-la-vega-baja.json",
     getUnits,
@@ -14,7 +14,23 @@ function useUnits() {
     dataUnits: data,
     errorUnits: error,
     loadingUnits: isLoading,
-  }
+  };
 }
 
-export default useUnits;
+const useMarkers = () => {
+  const { data, error, isLoading } = useSWR(
+    "unitsMarkers.json",
+    getUnitsMarkers,
+    {
+      suspense: true,
+    }
+  );
+
+  return {
+    dataMarkers: data,
+    errorMarkers: error,
+    loadingMarkers: isLoading,
+  };
+}
+
+export { useUnits, useMarkers };
