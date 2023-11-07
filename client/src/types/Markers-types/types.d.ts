@@ -17,3 +17,9 @@ export type MarkersProps = {
     irrigating: boolean,
   }
 }
+
+export type MarkerTooltip = {
+  layer: {
+    id: string,
+  }
+}

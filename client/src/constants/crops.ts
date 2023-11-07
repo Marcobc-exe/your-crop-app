@@ -1,4 +1,6 @@
-export const crops = [
+import { ArrCropsType } from "../types/Crops-types/types";
+
+export const crops: ArrCropsType = [
   {
     "cropId": 1,
     "cropName": "avocados"

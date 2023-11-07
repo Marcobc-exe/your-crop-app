@@ -8,7 +8,7 @@ import { MapType } from "../../types/Map-types/types";
 import useAreas from "../../hooks/controllers/useAreas.ts";
 import { generateHighlightsLayersMap, generateLayersMap } from "../../utils/layers.ts";
 import { handleCursorMap } from "../../utils/handleCursorMap.ts";
-import { handleTooltip } from "../../utils/handleTooltipMap.ts";
+import { handleDeviceTooltip, handleTooltip } from "../../utils/handleTooltipMap.ts";
 import FilterButtons from "../FilterButtons/FilterButtons.tsx";
 import { useMarkers } from "../../hooks/controllers/useUnits.ts";
 import { generateMarkers } from '../../utils/markers.ts';
@@ -75,11 +75,22 @@ export const MapCanvas = () => {
         style={STYLE_MAP}
         layers={[generateLayersMap(dataAreas, filterByIrrigating, filterByCrop), showUnits && generateMarkers(dataMarkers), highlights]}
         getCursor={(event) => handleCursorMap(event)}
-        getTooltip={(info) => info.object && handleTooltip(info.object)}
+        getTooltip={(info) => {
+          if (info.object) {
+            if (info.object.coordinates) {
+              return handleDeviceTooltip(info)
+            } else {
+              return handleTooltip(info.object)
+            }
+          }
+        }}
         onHover={(event) => {
           if (event.object) {
+            if (event.object.coordinates) return;
+
             const sectorsHighlights = generateHighlightsLayersMap(dataAreas, event.object) // set highlights
             setHighlights(sectorsHighlights);
+
           } else {
             if (highlights.length > 0) {
               setHighlights([]);

@@ -42,7 +42,7 @@
         "irrigating": false
       },
       "geometry": {
-        "coordinates": [-70.9533952624408, -32.415900649599074],
+        "coordinates": [-70.94397588037559, -32.42446132251308],
         "type": "Point"
       }
     },
@@ -57,7 +57,7 @@
         "irrigating": true
       },
       "geometry": {
-        "coordinates": [-70.93833800205948, -32.41534925638085],
+        "coordinates": [-70.9533952624408, -32.415900649599074],
         "type": "Point"
       }
     },
@@ -72,7 +72,7 @@
         "irrigating": true
       },
       "geometry": {
-        "coordinates": [-70.94397588037559, -32.42446132251308],
+        "coordinates": [-70.93833800205948, -32.41534925638085],
         "type": "Point"
       }
     }
