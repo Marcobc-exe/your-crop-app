@@ -72,7 +72,7 @@ export const DeviceCountersBar = () => {
           </Grid>
         </HtmlTooltip>
 
-        <HtmlTooltip title={"Total devices failure"} placement="top">
+        <HtmlTooltip title={"Total devices failures"} placement="top">
           <Grid item className="boxCounter">
             <Box className="subBoxCounter">
               <span>Failure</span>

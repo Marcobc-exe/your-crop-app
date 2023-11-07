@@ -1,10 +1,10 @@
 import { GeoJsonLayer } from 'deck.gl/typed';
 import { AreasProps, DataAreas } from '../types/Areas-types/types';
-import { handleColorAreas } from '../utils/handleColorCrops';
+import { handleColorAreas, handleLineColor, handleLineWidth } from '../utils/handleColorCrops';
 
 type ColorArea = [number, number, number, number]
 
-export const generateLayersMap = (dataAreas: DataAreas, filterBy: boolean, filterByCrop: boolean) => {
+export const generateLayersMap = (dataAreas: DataAreas, filterByIrrigating: boolean, filterByCrop: boolean, showFailures: boolean) => {
   return dataAreas.features.map((area: AreasProps) => {
 
     return new GeoJsonLayer({
@@ -13,9 +13,9 @@ export const generateLayersMap = (dataAreas: DataAreas, filterBy: boolean, filte
       filled: true,
       pickable: true,
       autoHighlight: false,
-      getFillColor: handleColorAreas(filterBy, area, filterByCrop),
-      getLineColor: (filterBy && area.properties.irrigating) ? [255, 255, 255, 200] : [255, 255, 255, 0],
-      getLineWidth: (filterBy && area.properties.irrigating) ? 4 : 0
+      getFillColor: handleColorAreas(filterByIrrigating, area, filterByCrop, showFailures),
+      getLineColor: handleLineColor(filterByIrrigating, area, showFailures),
+      getLineWidth: handleLineWidth(filterByIrrigating, area, showFailures)
     })
   })
 }

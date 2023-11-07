@@ -30,6 +30,7 @@ export const MapCanvas = () => {
   const [filterByIrrigating, setFilterByIrrigating]: StateFilter = useState(false);
   const [filterByCrop, setFilterByCrop]: StateFilter = useState(false)
   const [showUnits, setShowUnits]: StateFilter = useState(false)
+  const [showFailures, setShowFailures]: StateFilter = useState(false)
 
   const [highlights, setHighlights] = useState([]);
 
@@ -55,12 +56,20 @@ export const MapCanvas = () => {
 
   const handleIrrigating = () => {
     if (filterByCrop) setFilterByCrop(false)
+    if (showFailures) setShowFailures(false)
     setFilterByIrrigating((currentValue) => !currentValue)
   }
 
   const handleCrops = () => {
     if (filterByIrrigating) setFilterByIrrigating(false)
+    if (showFailures) setShowFailures(false)
     setFilterByCrop((currentValue) => !currentValue)
+  }
+
+  const handleFailure = () => {
+    if (filterByIrrigating) setFilterByIrrigating(false)
+    if (filterByCrop) setFilterByCrop(false)
+    setShowFailures((currentValue) => !currentValue)
   }
 
   const handleUnits = () => {
@@ -73,7 +82,7 @@ export const MapCanvas = () => {
         initialViewState={getInitialViewState(dataMap)}
         controller={true}
         style={STYLE_MAP}
-        layers={[generateLayersMap(dataAreas, filterByIrrigating, filterByCrop), showUnits && generateMarkers(dataMarkers), highlights]}
+        layers={[generateLayersMap(dataAreas, filterByIrrigating, filterByCrop, showFailures), showUnits && generateMarkers(dataMarkers), highlights]}
         getCursor={(event) => handleCursorMap(event)}
         getTooltip={(info) => {
           if (info.object) {
@@ -109,9 +118,11 @@ export const MapCanvas = () => {
           handleIrrigating={handleIrrigating} 
           handleCrops={handleCrops} 
           handleUnits={handleUnits}
+          handleFailure={handleFailure}
           filterByIrrigating={filterByIrrigating}
           filterByCrop={filterByCrop}
           showUnits={showUnits}
+          showFailures={showFailures}
         />
       </DeckGl>
     </Suspense>

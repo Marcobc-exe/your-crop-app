@@ -30,6 +30,11 @@ const txtFilter = () => {
     color: "#d9d9d9",
     margin: "4px 12px 0 0",
     fontSize: "16px",
+    transform: "all .4s ease-in-out",
+    ":hover": {
+      fontWeight: "600",
+      cursor: "default"
+    }
   }
 }
 

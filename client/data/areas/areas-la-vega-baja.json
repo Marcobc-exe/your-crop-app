@@ -10,7 +10,8 @@
         "device": 3061,
         "sector": 1,
         "irrigating": true,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -34,7 +35,8 @@
         "device": 3061,
         "sector": 1,
         "irrigating": true,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -62,7 +64,8 @@
         "device": 3061,
         "sector": 1,
         "irrigating": true,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -87,7 +90,8 @@
         "device": 3061,
         "sector": 1,
         "irrigating": true,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -127,7 +131,8 @@
         "device": 3061,
         "sector": 2,
         "irrigating": false,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -155,7 +160,8 @@
         "device": 3061,
         "sector": 2,
         "irrigating": false,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -199,7 +205,8 @@
         "device": 3061,
         "sector": 2,
         "irrigating": false,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -227,7 +234,8 @@
         "device": 3061,
         "sector": 2,
         "irrigating": false,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -260,7 +268,8 @@
         "device": 3061,
         "sector": 2,
         "irrigating": false,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -313,7 +322,8 @@
         "device": 3061,
         "sector": 2,
         "irrigating": false,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -352,7 +362,8 @@
         "device": 3061,
         "sector": 3,
         "irrigating": false,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -381,7 +392,8 @@
         "device": 3061,
         "sector": 3,
         "irrigating": false,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -426,7 +438,8 @@
         "device": 3061,
         "sector": 3,
         "irrigating": false,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -503,7 +516,8 @@
         "device": 3061,
         "sector": 3,
         "irrigating": false,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -549,7 +563,8 @@
         "device": 3061,
         "sector": 4,
         "irrigating": true,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -607,7 +622,8 @@
         "device": 3061,
         "sector": 4,
         "irrigating": true,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -648,7 +664,8 @@
         "device": 3061,
         "sector": 4,
         "irrigating": true,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -695,7 +712,8 @@
         "device": 3061,
         "sector": 4,
         "irrigating": true,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -744,7 +762,8 @@
         "device": 3061,
         "sector": 5,
         "irrigating": false,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -773,7 +792,8 @@
         "device": 3061,
         "sector": 5,
         "irrigating": false,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -801,7 +821,8 @@
         "device": 3061,
         "sector": 5,
         "irrigating": false,
-        "crop": 1
+        "crop": 1,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -827,7 +848,8 @@
         "device": 3062,
         "sector": 1,
         "irrigating": true,
-        "crop": 2
+        "crop": 2,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -851,7 +873,8 @@
         "device": 3062,
         "sector": 1,
         "irrigating": true,
-        "crop": 2
+        "crop": 2,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -875,7 +898,8 @@
         "device": 3062,
         "sector": 2,
         "irrigating": false,
-        "crop": 2
+        "crop": 2,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -907,7 +931,8 @@
         "device": 3062,
         "sector": 2,
         "irrigating": false,
-        "crop": 2
+        "crop": 2,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -931,7 +956,8 @@
         "device": 3062,
         "sector": 3,
         "irrigating": true,
-        "crop": 2
+        "crop": 2,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -962,7 +988,8 @@
         "device": 3062,
         "sector": 3,
         "irrigating": true,
-        "crop": 2
+        "crop": 2,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -986,7 +1013,8 @@
         "device": 3062,
         "sector": 3,
         "irrigating": true,
-        "crop": 2
+        "crop": 2,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -1014,7 +1042,8 @@
         "device": 3063,
         "sector": 1,
         "irrigating": false,
-        "crop": 3
+        "crop": 3,
+        "failure": true
       },
       "geometry": {
         "coordinates": [
@@ -1050,7 +1079,8 @@
         "device": 3063,
         "sector": 1,
         "irrigating": false,
-        "crop": 3
+        "crop": 3,
+        "failure": true
       },
       "geometry": {
         "coordinates": [
@@ -1081,7 +1111,8 @@
         "device": 3063,
         "sector": 1,
         "irrigating": false,
-        "crop": 3
+        "crop": 3,
+        "failure": true
       },
       "geometry": {
         "coordinates": [
@@ -1111,7 +1142,8 @@
         "device": 3063,
         "sector": 2,
         "irrigating": false,
-        "crop": 3
+        "crop": 3,
+        "failure": true
       },
       "geometry": {
         "coordinates": [
@@ -1140,7 +1172,8 @@
         "device": 3063,
         "sector": 2,
         "irrigating": false,
-        "crop": 3
+        "crop": 3,
+        "failure": true
       },
       "geometry": {
         "coordinates": [
@@ -1166,7 +1199,8 @@
         "device": 3063,
         "sector": 2,
         "irrigating": false,
-        "crop": 3
+        "crop": 3,
+        "failure": true
       },
       "geometry": {
         "coordinates": [
@@ -1204,7 +1238,8 @@
         "device": 3063,
         "sector": 3,
         "irrigating": false,
-        "crop": 3
+        "crop": 3,
+        "failure": true
       },
       "geometry": {
         "coordinates": [
@@ -1232,7 +1267,8 @@
         "device": 3063,
         "sector": 3,
         "irrigating": false,
-        "crop": 3
+        "crop": 3,
+        "failure": true
       },
       "geometry": {
         "coordinates": [
@@ -1270,7 +1306,8 @@
         "device": 3063,
         "sector": 3,
         "irrigating": false,
-        "crop": 3
+        "crop": 3,
+        "failure": true
       },
       "geometry": {
         "coordinates": [
@@ -1297,7 +1334,8 @@
         "device": 3063,
         "sector": 3,
         "irrigating": false,
-        "crop": 3
+        "crop": 3,
+        "failure": true
       },
       "geometry": {
         "coordinates": [
@@ -1325,7 +1363,8 @@
         "device": 3063,
         "sector": 3,
         "irrigating": false,
-        "crop": 3
+        "crop": 3,
+        "failure": true
       },
       "geometry": {
         "coordinates": [
@@ -1361,7 +1400,8 @@
         "device": 3064,
         "sector": 1,
         "irrigating": false,
-        "crop": 4
+        "crop": 4,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -1404,7 +1444,8 @@
         "device": 3064,
         "sector": 1,
         "irrigating": false,
-        "crop": 4
+        "crop": 4,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -1448,7 +1489,8 @@
         "device": 3064,
         "sector": 2,
         "irrigating": false,
-        "crop": 4
+        "crop": 4,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -1544,7 +1586,8 @@
         "device": 3064,
         "sector": 2,
         "irrigating": false,
-        "crop": 4
+        "crop": 4,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -1632,7 +1675,8 @@
         "device": 3064,
         "sector": 3,
         "irrigating": true,
-        "crop": 4
+        "crop": 4,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -1680,7 +1724,8 @@
         "device": 3064,
         "sector": 3,
         "irrigating": true,
-        "crop": 4
+        "crop": 4,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -1741,7 +1786,8 @@
         "device": 3064,
         "sector": 3,
         "irrigating": true,
-        "crop": 4
+        "crop": 4,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -1807,7 +1853,8 @@
         "device": 3064,
         "sector": 4,
         "irrigating": false,
-        "crop": 4
+        "crop": 4,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -1841,7 +1888,8 @@
         "device": 3064,
         "sector": 4,
         "irrigating": false,
-        "crop": 4
+        "crop": 4,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -1878,7 +1926,8 @@
         "device": 3064,
         "sector": 4,
         "irrigating": false,
-        "crop": 4
+        "crop": 4,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -1924,7 +1973,8 @@
         "device": 3064,
         "sector": 5,
         "irrigating": true,
-        "crop": 4
+        "crop": 4,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -1968,7 +2018,8 @@
         "device": 3064,
         "sector": 5,
         "irrigating": true,
-        "crop": 4
+        "crop": 4,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -2023,7 +2074,8 @@
         "device": 3064,
         "sector": 5,
         "irrigating": true,
-        "crop": 4
+        "crop": 4,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -2062,7 +2114,8 @@
         "device": 3065,
         "sector": 1,
         "irrigating": false,
-        "crop": 5
+        "crop": 5,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -2092,7 +2145,8 @@
         "device": 3065,
         "sector": 1,
         "irrigating": false,
-        "crop": 5
+        "crop": 5,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -2125,7 +2179,8 @@
         "device": 3065,
         "sector": 2,
         "irrigating": false,
-        "crop": 5
+        "crop": 5,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -2163,7 +2218,8 @@
         "device": 3065,
         "sector": 2,
         "irrigating": false,
-        "crop": 5
+        "crop": 5,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -2196,7 +2252,8 @@
         "device": 3065,
         "sector": 2,
         "irrigating": false,
-        "crop": 5
+        "crop": 5,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -2232,7 +2289,8 @@
         "device": 3065,
         "sector": 3,
         "irrigating": true,
-        "crop": 5
+        "crop": 5,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -2266,7 +2324,8 @@
         "device": 3065,
         "sector": 3,
         "irrigating": true,
-        "crop": 5
+        "crop": 5,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -2295,7 +2354,8 @@
         "device": 3065,
         "sector": 4,
         "irrigating": false,
-        "crop": 5
+        "crop": 5,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -2327,7 +2387,8 @@
         "device": 3065,
         "sector": 4,
         "irrigating": false,
-        "crop": 5
+        "crop": 5,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -2368,7 +2429,8 @@
         "device": 3065,
         "sector": 5,
         "irrigating": true,
-        "crop": 5
+        "crop": 5,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -2407,7 +2469,8 @@
         "device": 3065,
         "sector": 5,
         "irrigating": true,
-        "crop": 5
+        "crop": 5,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -2442,7 +2505,8 @@
         "device": 3065,
         "sector": 5,
         "irrigating": true,
-        "crop": 5
+        "crop": 5,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -2475,7 +2539,8 @@
         "device": 3065,
         "sector": 6,
         "irrigating": false,
-        "crop": 5
+        "crop": 5,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -2503,7 +2568,8 @@
         "device": 3065,
         "sector": 6,
         "irrigating": false,
-        "crop": 5
+        "crop": 5,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -2538,7 +2604,8 @@
         "device": 3065,
         "sector": 6,
         "irrigating": false,
-        "crop": 5
+        "crop": 5,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -2585,7 +2652,8 @@
         "device": 3065,
         "sector": 6,
         "irrigating": false,
-        "crop": 5
+        "crop": 5,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
@@ -2616,7 +2684,8 @@
         "device": 3065,
         "sector": 6,
         "irrigating": false,
-        "crop": 5
+        "crop": 5,
+        "failure": false
       },
       "geometry": {
         "coordinates": [
