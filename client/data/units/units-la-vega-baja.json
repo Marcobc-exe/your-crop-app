@@ -17,7 +17,7 @@
     "id": 3063,
     "name": "LA VEGA BAJA EQ 3",
     "connected": true,
-    "failure": false,
+    "failure": true,
     "irrigating": false
   },
   {

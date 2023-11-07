@@ -19,11 +19,10 @@ export const UnitsBtnsMenu: FC<UnitsBtnsMenuProps> = ({
 }) => {
   // const arrIdUnits: ArrIdUnits = [3061, 3062, 3063, 3064, 3065];
   // const { dataPrograms, errorPrograms, loadingPrograms } = usePrograms(arrIdUnits);
-  // console.log(dataPrograms)
+  // console.log(dataSectors)
   return (
     <>
       {dataSectors.map((unit: SectorType[]) => {
-        console.log(unit)
         const numberUnit: string[] = String(unit[0].deviceId).split("");
         const stateUnitById = openMenuUnits.find(
           (item) => item.deviceId === unit[0].deviceId

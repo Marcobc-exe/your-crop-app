@@ -8,10 +8,10 @@ import { MapType } from "../../types/Map-types/types";
 import useAreas from "../../hooks/controllers/useAreas.ts";
 import { generateHighlightsLayersMap, generateLayersMap } from "../../utils/layers.ts";
 import { handleCursorMap } from "../../utils/handleCursorMap.ts";
-import { handleTooltip } from "../../utils/handleTooltipMap.ts";
-import { useLayers } from '../../hooks/layers/useLayers.ts'
-import { useSelector } from "react-redux";
-import { Button } from "@mui/material";
+import { handleDeviceTooltip, handleTooltip } from "../../utils/handleTooltipMap.ts";
+import FilterButtons from "../FilterButtons/FilterButtons.tsx";
+import { useMarkers } from "../../hooks/controllers/useUnits.ts";
+import { generateMarkers } from '../../utils/markers.ts';
 
 const STYLE_MAP = {
 	height: "calc(100vh - 180px)",
@@ -23,16 +23,21 @@ const STYLE_MAP = {
 export const MapCanvas = () => {
   const { dataMap, errorMap, loadingMap } = useMap();
   const { dataAreas, errorAreas, loadingAreas } = useAreas();
-  const { setLayersHighlights } = useLayers();
-  const { layersHighlights } = useSelector((state) => state.areas);
+  const { dataMarkers, errorMarkers, loadingMarkers } = useMarkers();
 
   type StateFilter = [boolean, (newFilter: boolean) => void];
   
   const [filterByIrrigating, setFilterByIrrigating]: StateFilter = useState(false);
+  const [filterByCrop, setFilterByCrop]: StateFilter = useState(false)
+  const [showUnits, setShowUnits]: StateFilter = useState(false)
+  const [showFailures, setShowFailures]: StateFilter = useState(false)
 
-  if (loadingMap || loadingAreas) return <h2>Loading map...</h2>
+  const [highlights, setHighlights] = useState([]);
+
+  if (loadingMap || loadingAreas || loadingMarkers) return <h2>Loading map...</h2>
   if (errorMap) return <p>{errorMap}</p>
   if (errorAreas) return <p>{errorAreas}</p>
+  if (errorMarkers) return <p>{errorMarkers}</p>
 
   function getInitialViewState(dataMap: MapType) {
     const coordinates: string[] = dataMap.center.split(";");
@@ -49,8 +54,26 @@ export const MapCanvas = () => {
     }
   }
 
-  const handlefilter = () => {
+  const handleIrrigating = () => {
+    if (filterByCrop) setFilterByCrop(false)
+    if (showFailures) setShowFailures(false)
     setFilterByIrrigating((currentValue) => !currentValue)
+  }
+
+  const handleCrops = () => {
+    if (filterByIrrigating) setFilterByIrrigating(false)
+    if (showFailures) setShowFailures(false)
+    setFilterByCrop((currentValue) => !currentValue)
+  }
+
+  const handleFailure = () => {
+    if (filterByIrrigating) setFilterByIrrigating(false)
+    if (filterByCrop) setFilterByCrop(false)
+    setShowFailures((currentValue) => !currentValue)
+  }
+
+  const handleUnits = () => {
+    setShowUnits((currentValue) => !currentValue);
   }
 
   return(
@@ -59,15 +82,27 @@ export const MapCanvas = () => {
         initialViewState={getInitialViewState(dataMap)}
         controller={true}
         style={STYLE_MAP}
-        layers={[generateLayersMap(dataAreas, filterByIrrigating), layersHighlights]}
+        layers={[generateLayersMap(dataAreas, filterByIrrigating, filterByCrop, showFailures), showUnits && generateMarkers(dataMarkers), highlights]}
         getCursor={(event) => handleCursorMap(event)}
-        getTooltip={(info) => info.object && handleTooltip(info.object)}
+        getTooltip={(info) => {
+          if (info.object) {
+            if (info.object.coordinates) {
+              return handleDeviceTooltip(info)
+            } else {
+              return handleTooltip(info.object)
+            }
+          }
+        }}
         onHover={(event) => {
           if (event.object) {
-            generateHighlightsLayersMap(dataAreas, event.object, setLayersHighlights) // set highlights
+            if (event.object.coordinates) return;
+
+            const sectorsHighlights = generateHighlightsLayersMap(dataAreas, event.object) // set highlights
+            setHighlights(sectorsHighlights);
+
           } else {
-            if (layersHighlights.length > 0) {
-              setLayersHighlights([]) // clean highlights
+            if (highlights.length > 0) {
+              setHighlights([]);
             }
           }
         }}
@@ -79,22 +114,16 @@ export const MapCanvas = () => {
           minZoom={13}
           maxZoom={17}
         />
-        <Button
-          id={"irrigating"}
-          onClick={handlefilter}
-          sx={{
-            width: "120px",
-            height: "50px",
-            backgroundColor: "rgba(24, 144, 255, .8)",
-            color: "#d9d9d9",
-            border: "2px solid #d9d9d9",
-            ":hover": {
-              backgroundColor: "rgba(24, 144, 255, 1)",
-            }
-          }}
-        >
-          {"Irrigating"}
-        </Button>
+        <FilterButtons 
+          handleIrrigating={handleIrrigating} 
+          handleCrops={handleCrops} 
+          handleUnits={handleUnits}
+          handleFailure={handleFailure}
+          filterByIrrigating={filterByIrrigating}
+          filterByCrop={filterByCrop}
+          showUnits={showUnits}
+          showFailures={showFailures}
+        />
       </DeckGl>
     </Suspense>
   )

@@ -9,13 +9,14 @@ import { FilterBar } from "./components/FilterBar/FilterBar";
 const App = () => {
   return (
     <Provider store={store}>
-      <FilterBar />
+      {/* <FilterBar /> */}
       <Box 
         style={{ 
           width: "70%", 
           height: "calc(100vh - 180px)",
           position: "absolute",
-          left: "25%",
+          left: "50%",
+          transform:"translateX(-50%)",
           top: "7%"
         }}
       >

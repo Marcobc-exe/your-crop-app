@@ -1,0 +1,24 @@
+import { ArrCropsType } from "../types/Crops-types/types";
+
+export const crops: ArrCropsType = [
+  {
+    "cropId": 1,
+    "cropName": "avocados"
+  },
+  {
+    "cropId": 2,
+    "cropName": "lettuces"
+  },
+  {
+    "cropId": 3,
+    "cropName": "cabbages"
+  },
+  {
+    "cropId": 4,
+    "cropName": "tomatoes"
+  },
+  {
+    "cropId": 5,
+    "cropName": "potatoes"
+  }
+];
