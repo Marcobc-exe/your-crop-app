@@ -58,7 +58,7 @@ export const handleDeviceTooltip = (info: MarkerTooltip) => {
         <div>
           <div>
             <b>${deviceInfo.name} | ${deviceInfo.id}</b><br>
-            ${deviceInfo.connected === "true" ? `<b>Device connected</b><br>` : ""}
+            ${deviceInfo.connected === "true" ? `<b>Device on!</b><br>` : ""}
             ${deviceInfo.irrigating === "true" ? `<b>Irrigating!</b><br>` : ""}
             ${deviceInfo.failure === "true" ? `<b>Failure!</b><br>` : ""}
           </div>
