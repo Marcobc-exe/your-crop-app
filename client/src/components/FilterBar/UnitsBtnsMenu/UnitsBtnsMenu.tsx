@@ -3,8 +3,8 @@ import { FC, Fragment } from "react";
 import { SectorType, StateUnits } from "../../../types/Sectors-types/types";
 import { SectorsBtnsMenu } from "../SectorsBtnsMenu/SectorsBtnsMenu";
 import { EventType } from "../../../types/ReactElements-types/types";
-import usePrograms from "../../../hooks/controllers/usePrograms";
-import { ArrIdUnits } from "../../../types/Units-types/types";
+// import usePrograms from "../../../hooks/controllers/usePrograms";
+// import { ArrIdUnits } from "../../../types/Units-types/types";
 
 type UnitsBtnsMenuProps = {
   dataSectors: SectorType[];
@@ -22,7 +22,7 @@ export const UnitsBtnsMenu: FC<UnitsBtnsMenuProps> = ({
   // console.log(dataSectors)
   return (
     <>
-      {dataSectors.map((unit: SectorType[]) => {
+      {dataSectors.map((unit: SectorType) => {
         const numberUnit: string[] = String(unit[0].deviceId).split("");
         const stateUnitById = openMenuUnits.find(
           (item) => item.deviceId === unit[0].deviceId

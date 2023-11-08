@@ -1,4 +1,5 @@
 export type SectorType = {
+  map(arg0: (sector: SectorType) => import("react/jsx-runtime").JSX.Element): unknown;
   id: number,
   deviceId: number,
   name: string,
