@@ -2,7 +2,7 @@ import DeckGl from "@deck.gl/react/typed";
 import Map from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { MAP_STYLE, MAPBOX_TOKEN } from '../../config/configMap.ts'
-import { Suspense, useState } from "react";
+import { Dispatch, SetStateAction, Suspense, useState } from "react";
 import useMap from "../../hooks/controllers/useMap.ts";
 import { MapType } from "../../types/Map-types/types";
 import useAreas from "../../hooks/controllers/useAreas.ts";
