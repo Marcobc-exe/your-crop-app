@@ -1,8 +1,9 @@
-import { useUnits } from "../../hooks/controllers/useUnits";
+// import { useUnits } from "../../hooks/controllers/useUnits";
 import { Box, Grid, Tooltip, TooltipProps, styled, tooltipClasses } from "@mui/material";
 import { UnitType } from "../../types/Units-types/types";
 import "./index.css";
 import { Suspense } from "react";
+import { units } from '../../data/units/units'
 
 const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -19,14 +20,14 @@ const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
 }));
 
 export const DeviceCountersBar = () => {
-  const { dataUnits, errorUnits, loadingUnits } = useUnits();
+  // const { dataUnits, errorUnits, loadingUnits } = useUnits();
 
-  if (loadingUnits) return <h2>Loading Units...</h2>;
-  if (errorUnits) return <p>{errorUnits}</p>;
+  // if (loadingUnits) return <h2>Loading Units...</h2>;
+  // if (errorUnits) return <p>{errorUnits}</p>;
 
-  const totalIrrigating = dataUnits.filter((unit: UnitType) => unit.irrigating).length
-  const totalNonIrrigating = dataUnits.filter((unit: UnitType) => !unit.connected).length
-  const totalFailure = dataUnits.filter((unit: UnitType) => unit.failure).length
+  const totalIrrigating = units.filter((unit: UnitType) => unit.irrigating).length
+  const totalNonIrrigating = units.filter((unit: UnitType) => !unit.connected).length
+  const totalFailure = units.filter((unit: UnitType) => unit.failure).length
 
   return (
     <Suspense fallback={<h3>Loading...</h3>}>
@@ -46,7 +47,7 @@ export const DeviceCountersBar = () => {
                 <div className="statusCounter total" />
               </Box>
 
-              <span>{dataUnits.length}</span>
+              <span>{units.length}</span>
           </Grid>
         </HtmlTooltip>
 

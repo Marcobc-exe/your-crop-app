@@ -2,9 +2,7 @@ import { axios } from "./config";
 
 const getUnits = async (urlUnits: string) => {
   try {
-    console.log(urlUnits)
     const response = await axios.get(`units/${urlUnits}`);
-    console.log(response)
     return response.data;
   } catch (error) {
     console.log(error);
