@@ -5,7 +5,7 @@ import { FC } from "react";
 // import usePrograms from '../../../hooks/controllers/usePrograms'
 
 type SectorsBtnsMenuProps = {
-  unit: SectorType[];
+  unit: SectorType;
 }
 
 export const SectorsBtnsMenu: FC<SectorsBtnsMenuProps> = ({ unit }) => {

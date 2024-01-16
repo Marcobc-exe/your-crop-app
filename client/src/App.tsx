@@ -4,7 +4,7 @@ import store from './store'
 import { DeviceCountersBar } from "./components/DeviceCountersBar/DeviceCountersBar";
 import { Box } from "@mui/material";
 import './app.css'
-import { FilterBar } from "./components/FilterBar/FilterBar";
+// import { FilterBar } from "./components/FilterBar/FilterBar";
 
 const App = () => {
   return (

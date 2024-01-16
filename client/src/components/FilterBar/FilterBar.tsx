@@ -3,11 +3,10 @@ import "./index.css";
 import useSectors from "../../hooks/controllers/useSectors";
 import { ArrIdUnits } from "../../types/Units-types/types";
 import {
-  ArrStateUnits,
   SectorType,
   StateUnits,
 } from "../../types/Sectors-types/types";
-import { Suspense, useState } from "react";
+import { Dispatch, SetStateAction, Suspense, useState } from "react";
 import { EventType } from "../../types/ReactElements-types/types";
 import { UnitsBtnsMenu } from "./UnitsBtnsMenu/UnitsBtnsMenu";
 // import usePrograms from "../../hooks/controllers/usePrograms";
@@ -31,7 +30,7 @@ export const FilterBar = () => {
     };
   });
 
-  const [openMenuUnits, setOpenMenuUnits]: ArrStateUnits = useState(arrUnitStates);
+  const [openMenuUnits, setOpenMenuUnits]: [StateUnits[], Dispatch<SetStateAction<StateUnits[]>>] = useState(arrUnitStates);
 
   const handleMenuUnits = (event: EventType) => {
     const deviceId: number = Number(event.currentTarget.id);
