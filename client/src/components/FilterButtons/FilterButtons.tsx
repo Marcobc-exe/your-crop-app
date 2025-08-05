@@ -1,8 +1,12 @@
 import { Box, Button, Typography } from "@mui/material";
-import { btnMapStyle, boxFilterButtons, txtFilter, divDivider } from "./styles.ts";
+import {
+  btnMapStyle,
+  boxFilterButtons,
+  txtFilter,
+  divDivider,
+} from "./styles.ts";
 import { EventType } from "../../types/ReactElements-types/types.js";
 import { FC } from "react";
-import { Check, Shower, Spa, PersonalVideo, Error } from '@mui/icons-material';
 
 type FilterButtonsProps = {
   handleIrrigating: (event: EventType) => void;
@@ -23,49 +27,38 @@ const FilterButtons: FC<FilterButtonsProps> = ({
   filterByIrrigating,
   filterByCrop,
   showUnits,
-  showFailures
+  showFailures,
 }) => {
   return (
     <Box sx={boxFilterButtons}>
       <Typography sx={txtFilter}>Filter</Typography>
-      <Button
-        id={"irrigating"}
+      <button
+        id="irrigating"
+        style={btnMapStyle(filterByIrrigating)}
         onClick={handleIrrigating}
-        sx={btnMapStyle(filterByIrrigating)}
-        endIcon={filterByIrrigating ? <Check color="primary"/> : <Shower />}
       >
-        {"Irrigating"}
-      </Button>
-
-      <Button
-        id={"Crops"}
+        Irrigating
+      </button>
+      <button
+        id="Crops"
+        style={btnMapStyle(filterByCrop)}
         onClick={handleCrops}
-        sx={btnMapStyle(filterByCrop)}
-        endIcon={filterByCrop ? <Check color="primary" /> : <Spa />}
       >
-        {"Crops"}
-      </Button>
-
-      <Button
-        id={"Failures"}
+        Crops
+      </button>
+      <button
+        id="Failures"
+        style={btnMapStyle(showFailures)}
         onClick={handleFailure}
-        sx={btnMapStyle(showFailures)}
-        endIcon={showFailures ? <Check color="primary" /> : <Error />}
       >
-        {"Failures"}
-      </Button>
+        Failures
+      </button>
 
-      <Box sx={divDivider}/>
+      <Box sx={divDivider} />
       <Typography sx={txtFilter}>Complement</Typography>
-
-      <Button
-        id={"Units"}
-        onClick={handleUnits}
-        sx={btnMapStyle(showUnits)}
-        endIcon={showUnits ? <Check color="primary" /> : <PersonalVideo />}
-      >
-        {"Units"}
-      </Button>
+      <button id={"Units"} onClick={handleUnits} style={btnMapStyle(showUnits)}>
+        Units
+      </button>
     </Box>
   );
 };
