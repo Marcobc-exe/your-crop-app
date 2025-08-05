@@ -23,7 +23,7 @@ export const handleTooltip = (object : AreasProps) => {
 				color: "#d9d9d9",
 				letterSpacing: "0.15px",
 				fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
-				fontWeight: 600,
+				fontWeight: "600",
 				fontSize: "12px",
 				width: "120px auto",
 				height: "auto",
@@ -38,12 +38,12 @@ export const handleTooltip = (object : AreasProps) => {
 export const handleDeviceTooltip = (info: MarkerTooltip) => {
   const values = info.layer.id.split(";")
   const deviceInfo = {
-    id: Number,
-    name: String,
-    connected: String,
-    irrigating: String,
-    failure: String
-  }
+    id: 0,
+    name: "",
+    connected: "",
+    irrigating: "",
+    failure: ""
+  };
 
   values.forEach(value => {
     const info = value.split(":")
@@ -67,7 +67,7 @@ export const handleDeviceTooltip = (info: MarkerTooltip) => {
         backgroundColor: "#2f3542",
 				color: "#d9d9d9",
 				fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
-				fontWeight: 600,
+				fontWeight: "600",
 				fontSize: "12px",
 				width: "120px auto",
 				height: "auto",

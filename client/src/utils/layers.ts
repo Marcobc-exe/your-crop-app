@@ -20,13 +20,13 @@ export const generateLayersMap = (dataAreas: DataAreas, filterByIrrigating: bool
   })
 }
 
-export const generateHighlightsLayersMap = (dataAreas: DataAreas, object: AreasProps): void => {
+export const generateHighlightsLayersMap = (dataAreas: DataAreas, object: AreasProps) => {
   const foundAreas = dataAreas.features.filter((areas: AreasProps) => 
     areas.properties.sector === object.properties.sector &&
     areas.properties.deviceName === object.properties.deviceName
   );
 
-  const filter = foundAreas.map((area: AreasProps) => {
+  return foundAreas.map((area: AreasProps) => {
     return new GeoJsonLayer({
       id: `${area.properties.deviceName}-sector_${area.properties.sector}-ID_${area.properties.id}-highlights`,
       data: area,
@@ -38,8 +38,6 @@ export const generateHighlightsLayersMap = (dataAreas: DataAreas, object: AreasP
       getLineWidth: 8,
     });
   });
-
-  return filter;
 }
 
 // export const generateCropsLayers = (dataAreas: DataAreas, filterByCrop: boolean) => {

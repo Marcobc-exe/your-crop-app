@@ -35,7 +35,7 @@ export const MapCanvas = () => {
   // const { dataAreas, errorAreas, loadingAreas } = useAreas();
   // const { dataMarkers, errorMarkers, loadingMarkers } = useMarkers();
 
-  type StateFilter = [boolean, (newFilter: boolean) => void];
+  type StateFilter = [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 
   const [filterByIrrigating, setFilterByIrrigating]: StateFilter =
     useState(false);
