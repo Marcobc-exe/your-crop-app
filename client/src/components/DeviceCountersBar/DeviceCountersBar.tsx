@@ -44,10 +44,10 @@ export const DeviceCountersBar = () => {
           <Grid item className="boxCounter">
               <Box className="subBoxCounter">
                 <span>Total</span>
+                <span>{units.length}</span>
                 <div className="statusCounter total" />
               </Box>
 
-              <span>{units.length}</span>
           </Grid>
         </HtmlTooltip>
 
@@ -55,10 +55,10 @@ export const DeviceCountersBar = () => {
           <Grid item className="boxCounter">
             <Box className="subBoxCounter">
               <span>Irrigation</span>
+              <span>{totalIrrigating}</span>
               <div className="statusCounter irrigating" />
             </Box>
 
-            <span>{totalIrrigating}</span>
           </Grid>
         </HtmlTooltip>
 
@@ -66,10 +66,10 @@ export const DeviceCountersBar = () => {
           <Grid item className="boxCounter">
             <Box className="subBoxCounter">
               <span>Inactive</span>
+              <span>{totalNonIrrigating}</span>
               <div className="statusCounter inactive" />
             </Box>
 
-            <span>{totalNonIrrigating}</span>
           </Grid>
         </HtmlTooltip>
 
@@ -77,10 +77,10 @@ export const DeviceCountersBar = () => {
           <Grid item className="boxCounter">
             <Box className="subBoxCounter">
               <span>Failure</span>
+              <span>{totalFailure}</span>
               <div className="statusCounter failure" />
             </Box>
 
-            <span>{totalFailure}</span>
           </Grid>
         </HtmlTooltip>
 

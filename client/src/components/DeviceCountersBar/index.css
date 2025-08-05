@@ -4,21 +4,22 @@
   color: #d9d9d9;
   justify-content: space-around;
   border-radius: 10px 10px 0 0;
-  height: 100px;
+  height: 70px;
 }
 
 .boxCounter {
   font-size: 20px;
   font-weight: 600;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  padding-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .statusCounter {
   width: 12px;
   height: 12px;
   border-radius: 30px;
-  margin-top: 10px;
+  margin-left: 5px;
 }
 
 .statusCounter.total {
@@ -39,12 +40,14 @@
 
 .subBoxCounter {
   display: flex;
+  align-items: center;
   width: 140px auto;
-  gap: 20px;
+  max-width: 140px;
+  gap: 5px;
 }
 
 .titleMap {
-  position: relative;
-  top: 15%;
-  font-size: 28px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
 }
