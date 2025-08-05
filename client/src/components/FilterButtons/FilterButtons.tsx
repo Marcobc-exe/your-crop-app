@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import {
   btnMapStyle,
   boxFilterButtons,
@@ -57,7 +57,7 @@ const FilterButtons: FC<FilterButtonsProps> = ({
       <Box sx={divDivider} />
       <Typography sx={txtFilter}>Complement</Typography>
       <button id={"Units"} onClick={handleUnits} style={btnMapStyle(showUnits)}>
-        Units
+        Devices
       </button>
     </Box>
   );

@@ -2,17 +2,38 @@
   background-color: #2f3542;
   max-width: 100%;
   color: #d9d9d9;
-  justify-content: space-around;
   border-radius: 10px 10px 0 0;
   height: 70px;
 }
 
 .boxCounter {
   font-size: 20px;
-  font-weight: 600;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   display: flex;
+  gap: 40px;
+}
+
+.subBoxCounter {
+  display: flex;
+  align-items: center;
+  width: 140px auto;
+  max-width: 140px;
+  gap: 5px;
+}
+
+.boxTitle {
+  min-width: 20%;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+}
+
+.titleMap {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
 }
 
 .statusCounter {
@@ -36,18 +57,4 @@
 
 .statusCounter.failure {
   background-color: #c23616;
-}
-
-.subBoxCounter {
-  display: flex;
-  align-items: center;
-  width: 140px auto;
-  max-width: 140px;
-  gap: 5px;
-}
-
-.titleMap {
-  font-size: 22px;
-  display: flex;
-  align-items: center;
 }
