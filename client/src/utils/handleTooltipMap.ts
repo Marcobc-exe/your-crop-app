@@ -19,15 +19,14 @@ export const handleTooltip = (object : AreasProps) => {
         </div>
       `,
       style: {
-        backgroundColor: "#D9D9D9",
-				color: "#5D6571",
+        backgroundColor: "#2f3542",
+				color: "#d9d9d9",
 				letterSpacing: "0.15px",
 				fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
 				fontWeight: 600,
-				fontSize: "14px",
+				fontSize: "12px",
 				width: "120px auto",
 				height: "auto",
-				border: "1px solid #212B36",
 				borderRadius: "4px",
 				lineHeight: "20px",
 				padding: "9px 17px",
@@ -65,17 +64,14 @@ export const handleDeviceTooltip = (info: MarkerTooltip) => {
         </div>
       `,
       style: {
-        backgroundColor: "#D9D9D9",
-				color: "#5D6571",
-				letterSpacing: "0.15px",
+        backgroundColor: "#2f3542",
+				color: "#d9d9d9",
 				fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
 				fontWeight: 600,
-				fontSize: "14px",
+				fontSize: "12px",
 				width: "120px auto",
 				height: "auto",
-				border: "1px solid #212B36",
 				borderRadius: "4px",
-				lineHeight: "20px",
 				padding: "9px 17px",
       }
     } 
