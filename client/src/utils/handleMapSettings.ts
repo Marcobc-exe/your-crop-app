@@ -1,10 +1,10 @@
-import { map } from '../data/map/map'
+import { maps } from '../data/map/map'
 
 export const getInitialViewState = () => {
-  const coordinates: string[] = map.center.split(";");
+  const coordinates: string[] = maps[0].center.split(";");
   const lat: number = Number.parseFloat(coordinates[0]);
   const lng: number = Number.parseFloat(coordinates[1]);
-  const zoom: number = map.zoom;
+  const zoom: number = maps[0].zoom;
 
   return {
     latitude: lat,

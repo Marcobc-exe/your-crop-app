@@ -1,0 +1,21 @@
+.leftSide {
+  width: 15%;
+  background-color: #2f3542;
+  border-radius: 10px 0 0 10px;
+}
+
+.listMaps {
+  display: flex;
+  flex-direction: column;
+  padding-right: 5px;
+  gap: 2px;
+  position: relative;
+  top: 11px;
+}
+
+.btnMapName {
+  border: none;
+  background-color: #d9d9d9;
+  height: 30px;
+  cursor: pointer;
+}
