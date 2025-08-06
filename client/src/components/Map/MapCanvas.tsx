@@ -4,7 +4,6 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import { MAP_STYLE, MAPBOX_TOKEN } from "../../config/configMap.ts";
 import { Suspense, useState } from "react";
 // import useMap from "../../hooks/controllers/useMap.ts";
-import { MapType } from "../../types/Map-types/types";
 // import useAreas from "../../hooks/controllers/useAreas.ts";
 import {
   generateHighlightsLayersMap,
@@ -18,10 +17,9 @@ import {
 import FilterButtons from "../FilterButtons/FilterButtons.tsx";
 // import { useMarkers } from "../../hooks/controllers/useUnits.ts";
 import { generateMarkers } from "../../utils/markers.ts";
-
-import { map } from "../../data/map/map.ts";
 import { areas } from "../../data/areas/areas.ts";
 import { unitMarkers } from "../../data/unitsMarkers/unitsMarkers.ts";
+import { getInitialViewState } from '../../utils/handleMapSettings.ts'
 
 const STYLE_MAP = {
   height: "calc(100vh - 180px)",
@@ -51,20 +49,7 @@ export const MapCanvas = () => {
   // if (errorAreas) return <p>{errorAreas}</p>;
   // if (errorMarkers) return <p>{errorMarkers}</p>;
 
-  function getInitialViewState(dataMap: MapType) {
-    const coordinates: string[] = dataMap.center.split(";");
-    const lat: number = Number.parseFloat(coordinates[0]);
-    const lng: number = Number.parseFloat(coordinates[1]);
-    const zoom: number = dataMap.zoom;
-
-    return {
-      latitude: lat,
-      longitude: lng,
-      zoom,
-      minZoom: 13,
-      maxZoom: 17,
-    };
-  }
+  
 
   const handleIrrigating = () => {
     if (filterByCrop) setFilterByCrop(false);
@@ -91,7 +76,7 @@ export const MapCanvas = () => {
   return (
     <Suspense fallback={<h2>Loading map...</h2>}>
       <DeckGl
-        initialViewState={getInitialViewState(map)}
+        initialViewState={getInitialViewState()}
         controller={true}
         style={STYLE_MAP}
         layers={[
