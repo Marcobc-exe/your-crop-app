@@ -1,7 +1,7 @@
-import { maps } from '../data/map/map'
+import { maps, PropsMaps } from '../data/map/map'
 
-export const getInitialViewState = () => {
-  const coordinates: string[] = maps[0].center.split(";");
+export const getInitialViewState = (currentMap: PropsMaps) => {
+  const coordinates: string[] = currentMap.center.split(";");
   const lat: number = Number.parseFloat(coordinates[0]);
   const lng: number = Number.parseFloat(coordinates[1]);
   const zoom: number = maps[0].zoom;

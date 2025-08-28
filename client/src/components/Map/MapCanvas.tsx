@@ -2,9 +2,7 @@ import DeckGl from "@deck.gl/react/typed";
 import Map from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { MAP_STYLE, MAPBOX_TOKEN } from "../../config/configMap.ts";
-import { Suspense, useState } from "react";
-// import useMap from "../../hooks/controllers/useMap.ts";
-// import useAreas from "../../hooks/controllers/useAreas.ts";
+import { FC, Suspense, useState } from "react";
 import {
   generateHighlightsLayersMap,
   generateLayersMap,
@@ -15,11 +13,11 @@ import {
   handleTooltip,
 } from "../../utils/handleTooltipMap.ts";
 import FilterButtons from "../FilterButtons/FilterButtons.tsx";
-// import { useMarkers } from "../../hooks/controllers/useUnits.ts";
 import { generateMarkers } from "../../utils/markers.ts";
 import { areas } from "../../data/areas/areas.ts";
 import { unitMarkers } from "../../data/unitsMarkers/unitsMarkers.ts";
 import { getInitialViewState } from '../../utils/handleMapSettings.ts'
+import { PropsMaps } from "../../data/map/map.ts";
 
 const STYLE_MAP = {
   height: "calc(100vh - 180px)",
@@ -28,28 +26,19 @@ const STYLE_MAP = {
   borderRadius: "0 0 10px 0",
 };
 
-export const MapCanvas = () => {
-  // const { dataMap, errorMap, loadingMap } = useMap();
-  // const { dataAreas, errorAreas, loadingAreas } = useAreas();
-  // const { dataMarkers, errorMarkers, loadingMarkers } = useMarkers();
+type StateFilter = [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 
-  type StateFilter = [boolean, React.Dispatch<React.SetStateAction<boolean>>];
+type Props = {
+  currentMap : PropsMaps;
+}
 
+export const MapCanvas: FC<Props> = ({ currentMap }) => {
   const [filterByIrrigating, setFilterByIrrigating]: StateFilter =
     useState(false);
   const [filterByCrop, setFilterByCrop]: StateFilter = useState(false);
   const [showUnits, setShowUnits]: StateFilter = useState(false);
   const [showFailures, setShowFailures]: StateFilter = useState(false);
-
   const [highlights, setHighlights] = useState([]);
-
-  // if (loadingMap || loadingAreas || loadingMarkers)
-    // return <h2>Loading map...</h2>;
-  // if (errorMap) return <p>{errorMap}</p>;
-  // if (errorAreas) return <p>{errorAreas}</p>;
-  // if (errorMarkers) return <p>{errorMarkers}</p>;
-
-  
 
   const handleIrrigating = () => {
     if (filterByCrop) setFilterByCrop(false);
@@ -76,7 +65,7 @@ export const MapCanvas = () => {
   return (
     <Suspense fallback={<h2>Loading map...</h2>}>
       <DeckGl
-        initialViewState={getInitialViewState()}
+        initialViewState={getInitialViewState(currentMap)}
         controller={true}
         style={STYLE_MAP}
         layers={[
