@@ -1,0 +1,60 @@
+.desktopContainerCounters {
+  background-color: #2f3542;
+  max-width: 100%;
+  color: #d9d9d9;
+  border-radius: 0 10px 0 0;
+  height: 70px;
+}
+
+.desktopBoxCounter {
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flex;
+  gap: 40px;
+}
+
+.desktopSubBoxCounter {
+  display: flex;
+  align-items: center;
+  width: 140px auto;
+  max-width: 140px;
+  gap: 5px;
+}
+
+.desktopBoxTitle {
+  min-width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+}
+
+.desktopTitleMap {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+}
+
+.desktopStatusCounter {
+  width: 12px;
+  height: 12px;
+  border-radius: 30px;
+  margin-left: 5px;
+}
+
+.desktopStatusCounter.total {
+  background-color: rgba(43, 139, 46, 0.8);
+}
+
+.desktopStatusCounter.irrigating {
+  background-color: rgba(24, 144, 185, 1);
+}
+
+.desktopStatusCounter.inactive {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.desktopStatusCounter.failure {
+  background-color: #c23616;
+}
