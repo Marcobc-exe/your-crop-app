@@ -1,8 +1,20 @@
 import { Box, Grid } from "@mui/material";
 import { CustomTooltip } from "../DeviceCountersBar";
 import "./tabletIndex.css";
+import { UnitsProps } from "../../../data/units/units";
+import { PropsMaps } from "../../../data/map/map";
+import { FC } from "react";
 
-export const TabletCountersBar = ({
+type Props = {
+  units: UnitsProps[];
+  isTablet: boolean;
+  currentMap: PropsMaps;
+  totalIrrigating: number;
+  totalNonIrrigating: number;
+  totalFailure: number;
+}
+
+export const TabletCountersBar: FC<Props> = ({
   units,
   isTablet,
   totalIrrigating,

@@ -7,10 +7,11 @@ import {
   useTheme,
 } from "@mui/material";
 import { UnitType } from "../../types/Units-types/types";
-import { Suspense } from "react";
+import { FC, Suspense } from "react";
 import { units } from "../../data/units/units";
 import { DesktopCountersBar } from "./DesktopCountersBar/DesktopCountersBar";
 import { TabletCountersBar } from "./TabletCountersBar/TabletCountersBar";
+import { PropsMaps } from "../../data/map/map";
 
 export const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -26,7 +27,11 @@ export const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
   },
 }));
 
-export const DeviceCountersBar = () => {
+type Props = {
+  currentMap: PropsMaps;
+}
+
+export const DeviceCountersBar: FC<Props> = ({ currentMap }) => {
   const theme = useTheme();
   // const isXs = useMediaQuery(theme.breakpoints.down("sm")); // <= 600px
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md")); // 600px–900px
@@ -45,6 +50,7 @@ export const DeviceCountersBar = () => {
       <DesktopCountersBar
         units={units}
         isDesktop={isDesktop}
+        currentMap={currentMap}
         totalFailure={totalFailure}
         totalIrrigating={totalIrrigating}
         totalNonIrrigating={totalNonIrrigating}
@@ -52,6 +58,7 @@ export const DeviceCountersBar = () => {
       <TabletCountersBar
         units={units}
         isTablet={isTablet}
+        currentMap={currentMap}
         totalFailure={totalFailure}
         totalIrrigating={totalIrrigating}
         totalNonIrrigating={totalNonIrrigating}

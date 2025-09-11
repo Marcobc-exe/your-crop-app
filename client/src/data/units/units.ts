@@ -1,4 +1,12 @@
-export const units = [
+export type UnitsProps = {
+  id: number;
+  name: string;
+  connected: boolean;
+  failure: boolean;
+  irrigating: boolean;
+}
+
+export const units: UnitsProps[] = [
   {
     id: 3061,
     name: "LA VEGA BAJA EQ 1",

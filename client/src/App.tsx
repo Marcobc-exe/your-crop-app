@@ -9,12 +9,12 @@ import { useState } from "react";
 import { maps, PropsMaps } from "./data/map/map";
 
 const App = () => {
-  const [currentMap, setCurrentMap] = useState<PropsMaps>(maps[1]);
+  const [currentMap, setCurrentMap] = useState<PropsMaps>(maps[0]);
 
   const handleCurrentMap = (id: string) => {
     const selectedMap = maps.find((map) => map.id === id);
     setCurrentMap(selectedMap);
-  }
+  };
 
   return (
     <Provider store={store}>
@@ -27,7 +27,7 @@ const App = () => {
       >
         <LeftSide currentMap={currentMap} handleCurrentMap={handleCurrentMap} />
         <div className="rightSide">
-          <DeviceCountersBar />
+          <DeviceCountersBar currentMap={currentMap} />
           <MapCanvas currentMap={currentMap} />
         </div>
       </Box>
