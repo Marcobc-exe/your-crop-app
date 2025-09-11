@@ -17,7 +17,7 @@ export const LeftSide: FC<Props> = ({ currentMap, handleCurrentMap }) => {
           return (
             <button
               key={map.id}
-              className="btnMapName"
+              className={`btnMapName ${disabled}`}
               onClick={() => handleCurrentMap(map.id)}
               style={{ cursor: disabled ? "default" : "pointer" }}
               disabled={disabled}
