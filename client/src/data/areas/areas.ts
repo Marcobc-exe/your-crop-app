@@ -1,45 +1,67 @@
-export const areas = {
-  "type": "FeatureCollection",
-  "features": [
+export type AreasProps = {
+  type: string;
+  features: {
+    type: string;
+    properties: {
+      id: string;
+      idMap: string;
+      deviceName: string;
+      device: number;
+      sector: number;
+      irrigating: boolean;
+      crop: number;
+      failure: boolean;
+    };
+    geometry: {
+      coordinates: number[][][];
+      type: string;
+    };
+    id?: undefined;
+  }[];
+};
+
+export const areasVegaBaja: AreasProps = {
+  type: "FeatureCollection",
+  features: [
     {
-      "type": "Feature",
-      "properties": {
-        "id": "9f4bffbc-6ee5-11ee-b962-0242ac120002",
-        "idMap": "b6675e5c-2757-477f-a96d-5229ff6abe16",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 1,
-        "irrigating": true,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "9f4bffbc-6ee5-11ee-b962-0242ac120002",
+        idMap: "b6675e5c-2757-477f-a96d-5229ff6abe16",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 1,
+        irrigating: true,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95783495418122, -32.42264679746905],
             [-70.96094925069607, -32.42274944180773],
             [-70.96080269745096, -32.42579335486443],
             [-70.95768708521005, -32.42582538276086],
-            [-70.95783495418122, -32.42264679746905]
-          ]
+            [-70.95783495418122, -32.42264679746905],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "0f7c2de6-6ee8-11ee-b962-0242ac120002",
-        "idMap": "b6675e5c-2757-477f-a96d-5229ff6abe16",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 1,
-        "irrigating": true,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "0f7c2de6-6ee8-11ee-b962-0242ac120002",
+        idMap: "b6675e5c-2757-477f-a96d-5229ff6abe16",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 1,
+        irrigating: true,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.96085485039893, -32.42581270469715],
             [-70.96100767875814, -32.42275475749675],
@@ -49,52 +71,52 @@ export const areas = {
             [-70.96180877302763, -32.42578851434166],
             [-70.96101451985196, -32.42576432397967],
             [-70.96099609645343, -32.42581961622643],
-            [-70.96085485039893, -32.42581270469715]
-          ]
+            [-70.96085485039893, -32.42581270469715],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "4a5399c2-6ee8-11ee-b962-0242ac120002",
-        "idMap": "b6675e5c-2757-477f-a96d-5229ff6abe16",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 1,
-        "irrigating": true,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "4a5399c2-6ee8-11ee-b962-0242ac120002",
+        idMap: "b6675e5c-2757-477f-a96d-5229ff6abe16",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 1,
+        irrigating: true,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.96101090209001, -32.422694772963546],
             [-70.96107964502141, -32.42129096644581],
             [-70.96214486411806, -32.42180102605723],
             [-70.96312344306921, -32.42200694093076],
             [-70.96310904283541, -32.42277390746807],
-            [-70.96101090209001, -32.422694772963546]
-          ]
+            [-70.96101090209001, -32.422694772963546],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "4a5399c2-6ee8-11ee-b962-0242ac120001",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 1,
-        "irrigating": true,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "4a5399c2-6ee8-11ee-b962-0242ac120001",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 1,
+        irrigating: true,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.96318385596743, -32.422010069835224],
             [-70.96400378751665, -32.42200378727917],
@@ -116,26 +138,26 @@ export const areas = {
             [-70.96664566112345, -32.42225580349978],
             [-70.96545852825385, -32.422847473054816],
             [-70.96315141501154, -32.422776371979666],
-            [-70.96318385596743, -32.422010069835224]
-          ]
+            [-70.96318385596743, -32.422010069835224],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "b264f426-6eec-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 2,
-        "irrigating": false,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "b264f426-6eec-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 2,
+        irrigating: false,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.96395943646296, -32.42028367330729],
             [-70.96573643122528, -32.419930279143735],
@@ -145,26 +167,26 @@ export const areas = {
             [-70.96601052887954, -32.4215051679216],
             [-70.96448837356438, -32.4218007152193],
             [-70.96434329058893, -32.42171711876125],
-            [-70.96395943646296, -32.42028367330729]
-          ]
+            [-70.96395943646296, -32.42028367330729],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "dfbdcf06-6eec-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 2,
-        "irrigating": false,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "dfbdcf06-6eec-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 2,
+        irrigating: false,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.9639015212949, -32.42032014743783],
             [-70.96431204700802, -32.421732090208096],
@@ -190,26 +212,26 @@ export const areas = {
             [-70.96343404847616, -32.4204391898832],
             [-70.96348929411008, -32.42034644088351],
             [-70.963614048742, -32.42037627552255],
-            [-70.9639015212949, -32.42032014743783]
-          ]
+            [-70.9639015212949, -32.42032014743783],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "f96ffc76-6eec-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 2,
-        "irrigating": false,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "f96ffc76-6eec-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 2,
+        irrigating: false,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.96225265081863, -32.420165762400885],
             [-70.96238280846137, -32.41990806387771],
@@ -219,26 +241,26 @@ export const areas = {
             [-70.96350133159955, -32.41882074217743],
             [-70.963880151168, -32.42024373410589],
             [-70.96280585312992, -32.420457400916675],
-            [-70.96225265081863, -32.420165762400885]
-          ]
+            [-70.96225265081863, -32.420165762400885],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "16d98142-6eed-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 2,
-        "irrigating": false,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "16d98142-6eed-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 2,
+        irrigating: false,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.96357701438731, -32.41879303315817],
             [-70.9652265637695, -32.418431937811484],
@@ -253,26 +275,26 @@ export const areas = {
             [-70.96564559918166, -32.41979950435646],
             [-70.96564380557875, -32.41988390778648],
             [-70.96394775259587, -32.420229455718],
-            [-70.96357701438731, -32.41879303315817]
-          ]
+            [-70.96357701438731, -32.41879303315817],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "4c38d798-6eed-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 2,
-        "irrigating": false,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "4c38d798-6eed-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 2,
+        irrigating: false,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.96535421954853, -32.418307413894645],
             [-70.9657844758631, -32.41840262725202],
@@ -307,26 +329,26 @@ export const areas = {
             [-70.96518135040141, -32.41896130558139],
             [-70.96520913779909, -32.41874296266016],
             [-70.96524699708607, -32.41873227556359],
-            [-70.96535421954853, -32.418307413894645]
-          ]
+            [-70.96535421954853, -32.418307413894645],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "74944b8c-6eed-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 2,
-        "irrigating": false,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "74944b8c-6eed-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 2,
+        irrigating: false,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.96611040269184, -32.42011256869762],
             [-70.96651775913601, -32.421500860415634],
@@ -347,26 +369,26 @@ export const areas = {
             [-70.96599758374981, -32.4202964530164],
             [-70.96604346400395, -32.4202934457204],
             [-70.96601501325996, -32.420185023345084],
-            [-70.96611040269184, -32.42011256869762]
-          ]
+            [-70.96611040269184, -32.42011256869762],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "964c7704-6eed-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 3,
-        "irrigating": false,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "964c7704-6eed-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 3,
+        irrigating: false,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.96104410371176, -32.421298036852626],
             [-70.96096671608166, -32.42268553464209],
@@ -377,26 +399,26 @@ export const areas = {
             [-70.95939209849325, -32.421003647989686],
             [-70.96005663785097, -32.42099626429746],
             [-70.96067771520907, -32.42101103050793],
-            [-70.96104410371176, -32.421298036852626]
-          ]
+            [-70.96104410371176, -32.421298036852626],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "bcd764ba-6eed-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 3,
-        "irrigating": false,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "bcd764ba-6eed-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 3,
+        irrigating: false,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95788665747712, -32.420821003923336],
             [-70.95791456440104, -32.42065599401298],
@@ -423,26 +445,26 @@ export const areas = {
             [-70.96045479234188, -32.42090454167605],
             [-70.95900132793616, -32.42090454167605],
             [-70.95844734305383, -32.42083891261556],
-            [-70.95788665747712, -32.420821003923336]
-          ]
+            [-70.95788665747712, -32.420821003923336],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "115c52fc-6eee-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 3,
-        "irrigating": false,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "115c52fc-6eee-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 3,
+        irrigating: false,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95880319839254, -32.418448311923626],
             [-70.95888484348839, -32.41850304112256],
@@ -501,26 +523,26 @@ export const areas = {
             [-70.9585880681237, -32.41872639058589],
             [-70.95862856675991, -32.418607318810196],
             [-70.9586633894084, -32.418532783243045],
-            [-70.95880319839254, -32.418448311923626]
-          ]
+            [-70.95880319839254, -32.418448311923626],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "379d3346-6eee-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 3,
-        "irrigating": false,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "379d3346-6eee-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 3,
+        irrigating: false,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95674893912792, -32.42007944731067],
             [-70.95690663499316, -32.420091629023844],
@@ -548,26 +570,26 @@ export const areas = {
             [-70.95644383053508, -32.42021419543491],
             [-70.95653629527571, -32.42015349435648],
             [-70.95660034816864, -32.420104864104964],
-            [-70.95674893912792, -32.42007944731067]
-          ]
+            [-70.95674893912792, -32.42007944731067],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "7066ac98-6eee-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 4,
-        "irrigating": true,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "7066ac98-6eee-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 4,
+        irrigating: true,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95660749417682, -32.419463695100816],
             [-70.95665963754676, -32.41954082912026],
@@ -607,26 +629,26 @@ export const areas = {
             [-70.95594158587689, -32.42003705957599],
             [-70.95614160374502, -32.419876137031224],
             [-70.95624185870294, -32.4197914488837],
-            [-70.95660749417682, -32.419463695100816]
-          ]
+            [-70.95660749417682, -32.419463695100816],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "8cde9426-6eee-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 4,
-        "irrigating": true,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "8cde9426-6eee-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 4,
+        irrigating: true,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95444717259193, -32.4198289277791],
             [-70.9546073381738, -32.4199491856455],
@@ -649,26 +671,26 @@ export const areas = {
             [-70.95418274506397, -32.41999887490015],
             [-70.95425873832274, -32.41986708329328],
             [-70.95430334533492, -32.41983983406127],
-            [-70.95444717259193, -32.4198289277791]
-          ]
+            [-70.95444717259193, -32.4198289277791],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "bb2613e0-6eee-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 4,
-        "irrigating": true,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "bb2613e0-6eee-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 4,
+        irrigating: true,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95425956487487, -32.4197303930141],
             [-70.95411526519672, -32.419978848004654],
@@ -697,26 +719,26 @@ export const areas = {
             [-70.95309361988448, -32.419908042454935],
             [-70.95329132075622, -32.41980476317413],
             [-70.95339376361194, -32.41978474427659],
-            [-70.95425956487487, -32.4197303930141]
-          ]
+            [-70.95425956487487, -32.4197303930141],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "f0eb79ac-6eee-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 4,
-        "irrigating": true,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "f0eb79ac-6eee-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 4,
+        irrigating: true,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95054540655164, -32.42015238329559],
             [-70.95029277881999, -32.41950013520395],
@@ -747,26 +769,26 @@ export const areas = {
             [-70.95171878134465, -32.42010727460854],
             [-70.95167995762976, -32.42013281054787],
             [-70.95142428201636, -32.42009267632],
-            [-70.95054540655164, -32.42015238329559]
-          ]
+            [-70.95054540655164, -32.42015238329559],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "2c42aebc-6eef-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 5,
-        "irrigating": false,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "2c42aebc-6eef-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 5,
+        irrigating: false,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95777091640761, -32.42258040485702],
             [-70.95573422250716, -32.422518683618094],
@@ -777,26 +799,26 @@ export const areas = {
             [-70.95737838388622, -32.42103512986489],
             [-70.95762884663444, -32.42097217638602],
             [-70.95785626315714, -32.42100365942901],
-            [-70.95777091640761, -32.42258040485702]
-          ]
+            [-70.95777091640761, -32.42258040485702],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "4da5b5ae-6eef-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 5,
-        "irrigating": false,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "4da5b5ae-6eef-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 5,
+        irrigating: false,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95776986406267, -32.4226667324076],
             [-70.95762128365844, -32.42582438504006],
@@ -806,103 +828,102 @@ export const areas = {
             [-70.95599531334271, -32.42520587489791],
             [-70.95561500012724, -32.425182926992306],
             [-70.9557342937019, -32.42259891168496],
-            [-70.95776986406267, -32.4226667324076]
-          ]
+            [-70.95776986406267, -32.4226667324076],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "66baea28-6eef-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 1",
-        "device": 3061,
-        "sector": 5,
-        "irrigating": false,
-        "crop": 1,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "66baea28-6eef-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 1",
+        device: 3061,
+        sector: 5,
+        irrigating: false,
+        crop: 1,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95564334836035, -32.4221642708194],
             [-70.95549897703259, -32.4253831427503],
             [-70.95376268975569, -32.42532382529875],
             [-70.95367337998916, -32.425264470679494],
             [-70.95382383067395, -32.42212593086463],
-            [-70.95564334836035, -32.4221642708194]
-          ]
+            [-70.95564334836035, -32.4221642708194],
+          ],
         ],
-        "type": "Polygon"
+        type: "Polygon",
       },
-      "id": 20
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "a7bd8904-6eef-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 2",
-        "device": 3062,
-        "sector": 1,
-        "irrigating": true,
-        "crop": 2,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "a7bd8904-6eef-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 2",
+        device: 3062,
+        sector: 1,
+        irrigating: true,
+        crop: 2,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95586094068719, -32.42588502479521],
             [-70.95573145864067, -32.42819992525842],
             [-70.9534494271418, -32.42815497825722],
             [-70.95357775279341, -32.4258299956936],
-            [-70.95586094068719, -32.42588502479521]
-          ]
+            [-70.95586094068719, -32.42588502479521],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "be66a244-6eef-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 2",
-        "device": 3062,
-        "sector": 1,
-        "irrigating": true,
-        "crop": 2,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "be66a244-6eef-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 2",
+        device: 3062,
+        sector: 1,
+        irrigating: true,
+        crop: 2,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.9559184826262, -32.42654538018442],
             [-70.95851123833651, -32.426599542608905],
             [-70.95845938328986, -32.428275076333],
             [-70.95583671886618, -32.428175466840116],
-            [-70.9559184826262, -32.42654538018442]
-          ]
+            [-70.9559184826262, -32.42654538018442],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "da820784-6eef-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 2",
-        "device": 3062,
-        "sector": 2,
-        "irrigating": false,
-        "crop": 2,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "da820784-6eef-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 2",
+        device: 3062,
+        sector: 2,
+        irrigating: false,
+        crop: 2,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95348243608933, -32.425794876963586],
             [-70.95335243484533, -32.42808473089872],
@@ -916,51 +937,51 @@ export const areas = {
             [-70.95066662855947, -32.42699196220392],
             [-70.95004221279899, -32.42689336872805],
             [-70.95014556910188, -32.425679300137034],
-            [-70.95348243608933, -32.425794876963586]
-          ]
+            [-70.95348243608933, -32.425794876963586],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "ed739970-6eef-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 2",
-        "device": 3062,
-        "sector": 2,
-        "irrigating": false,
-        "crop": 2,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "ed739970-6eef-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 2",
+        device: 3062,
+        sector: 2,
+        irrigating: false,
+        crop: 2,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95001778566028, -32.42567887258613],
             [-70.95003529304492, -32.42623113307712],
             [-70.947688215071, -32.42633051285021],
             [-70.94777687244719, -32.42580020485655],
-            [-70.95001778566028, -32.42567887258613]
-          ]
+            [-70.95001778566028, -32.42567887258613],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "03425bce-6ef0-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 2",
-        "device": 3062,
-        "sector": 3,
-        "irrigating": true,
-        "crop": 2,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "03425bce-6ef0-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 2",
+        device: 3062,
+        sector: 3,
+        irrigating: true,
+        crop: 2,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94733088845787, -32.42561334115034],
             [-70.94741221667621, -32.42415712729719],
@@ -973,51 +994,51 @@ export const areas = {
             [-70.9486747726387, -32.42560015765203],
             [-70.94767531725194, -32.42557753931867],
             [-70.94761624339336, -32.42563972257742],
-            [-70.94733088845787, -32.42561334115034]
-          ]
+            [-70.94733088845787, -32.42561334115034],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "219507b6-6ef0-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 2",
-        "device": 3062,
-        "sector": 3,
-        "irrigating": true,
-        "crop": 2,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "219507b6-6ef0-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 2",
+        device: 3062,
+        sector: 3,
+        irrigating: true,
+        crop: 2,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94952261255688, -32.42557240975231],
             [-70.94959129748455, -32.423935039058684],
             [-70.95172893208112, -32.42294912017758],
             [-70.95161163970317, -32.42562051124978],
-            [-70.94952261255688, -32.42557240975231]
-          ]
+            [-70.94952261255688, -32.42557240975231],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "37de711a-6ef0-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 2",
-        "device": 3062,
-        "sector": 3,
-        "irrigating": true,
-        "crop": 2,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "37de711a-6ef0-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 2",
+        device: 3062,
+        sector: 3,
+        irrigating: true,
+        crop: 2,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95169317079075, -32.42563424966613],
             [-70.95183858349291, -32.42292326405609],
@@ -1027,26 +1048,26 @@ export const areas = {
             [-70.95331544988642, -32.421289279139955],
             [-70.9537714507894, -32.42131770846554],
             [-70.95358501985481, -32.425689181706815],
-            [-70.95169317079075, -32.42563424966613]
-          ]
+            [-70.95169317079075, -32.42563424966613],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "55f38488-6ef0-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 3",
-        "device": 3063,
-        "sector": 1,
-        "irrigating": false,
-        "crop": 3,
-        "failure": true
+      type: "Feature",
+      properties: {
+        id: "55f38488-6ef0-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 3",
+        device: 3063,
+        sector: 1,
+        irrigating: false,
+        crop: 3,
+        failure: true,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95305117291154, -32.42129934874924],
             [-70.95244823928613, -32.42233119003443],
@@ -1064,26 +1085,26 @@ export const areas = {
             [-70.95183562770195, -32.42110904675127],
             [-70.95214825544141, -32.421137611387145],
             [-70.95246101393941, -32.421147131414386],
-            [-70.95305117291154, -32.42129934874924]
-          ]
+            [-70.95305117291154, -32.42129934874924],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "75532c20-6ef0-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 3",
-        "device": 3063,
-        "sector": 1,
-        "irrigating": false,
-        "crop": 3,
-        "failure": true
+      type: "Feature",
+      properties: {
+        id: "75532c20-6ef0-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 3",
+        device: 3063,
+        sector: 1,
+        irrigating: false,
+        crop: 3,
+        failure: true,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95042338108192, -32.42232141053282],
             [-70.94877674164668, -32.42186361581211],
@@ -1096,26 +1117,26 @@ export const areas = {
             [-70.95040778042073, -32.4210070872033],
             [-70.9504808830667, -32.420967391158875],
             [-70.95089802934017, -32.42109207543341],
-            [-70.95042338108192, -32.42232141053282]
-          ]
+            [-70.95042338108192, -32.42232141053282],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "88ed24fc-6ef0-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 3",
-        "device": 3063,
-        "sector": 1,
-        "irrigating": false,
-        "crop": 3,
-        "failure": true
+      type: "Feature",
+      properties: {
+        id: "88ed24fc-6ef0-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 3",
+        device: 3063,
+        sector: 1,
+        irrigating: false,
+        crop: 3,
+        failure: true,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95038372135866, -32.42239927376686],
             [-70.94997643628608, -32.423453000270534],
@@ -1127,26 +1148,26 @@ export const areas = {
             [-70.9482539924506, -32.42332146386603],
             [-70.94822034340343, -32.42323912753074],
             [-70.94874435939398, -32.421930796306064],
-            [-70.95038372135866, -32.42239927376686]
-          ]
+            [-70.95038372135866, -32.42239927376686],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "88ed24fc-6ef0-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 3",
-        "device": 3063,
-        "sector": 2,
-        "irrigating": false,
-        "crop": 3,
-        "failure": true
+      type: "Feature",
+      properties: {
+        id: "88ed24fc-6ef0-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 3",
+        device: 3063,
+        sector: 2,
+        irrigating: false,
+        crop: 3,
+        failure: true,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94819944399, -32.42339789127229],
             [-70.94961709863307, -32.423509035211225],
@@ -1157,26 +1178,26 @@ export const areas = {
             [-70.94914700111184, -32.42397944238353],
             [-70.9486561970636, -32.42400701527089],
             [-70.94817217087002, -32.42400701527089],
-            [-70.94819944399, -32.42339789127229]
-          ]
+            [-70.94819944399, -32.42339789127229],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "abde5346-6ef0-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 3",
-        "device": 3063,
-        "sector": 2,
-        "irrigating": false,
-        "crop": 3,
-        "failure": true
+      type: "Feature",
+      properties: {
+        id: "abde5346-6ef0-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 3",
+        device: 3063,
+        sector: 2,
+        irrigating: false,
+        crop: 3,
+        failure: true,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94663423070149, -32.42409367929942],
             [-70.94673118566793, -32.42293445254246],
@@ -1184,26 +1205,26 @@ export const areas = {
             [-70.9480344986823, -32.423313721842284],
             [-70.94804588479867, -32.42393948369187],
             [-70.94795413831432, -32.42402213076526],
-            [-70.94663423070149, -32.42409367929942]
-          ]
+            [-70.94663423070149, -32.42409367929942],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "d21cb732-6ef0-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 3",
-        "device": 3063,
-        "sector": 2,
-        "irrigating": false,
-        "crop": 3,
-        "failure": true
+      type: "Feature",
+      properties: {
+        id: "d21cb732-6ef0-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 3",
+        device: 3063,
+        sector: 2,
+        irrigating: false,
+        crop: 3,
+        failure: true,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94666254469836, -32.422924582762036],
             [-70.94665526251887, -32.42305378026246],
@@ -1223,26 +1244,26 @@ export const areas = {
             [-70.9448649249578, -32.42287284630793],
             [-70.94509271208496, -32.42281460349431],
             [-70.94518399250468, -32.42280165499254],
-            [-70.94666254469836, -32.422924582762036]
-          ]
+            [-70.94666254469836, -32.422924582762036],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "eb3d85ac-6ef0-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 3",
-        "device": 3063,
-        "sector": 3,
-        "irrigating": false,
-        "crop": 3,
-        "failure": true
+      type: "Feature",
+      properties: {
+        id: "eb3d85ac-6ef0-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 3",
+        device: 3063,
+        sector: 3,
+        irrigating: false,
+        crop: 3,
+        failure: true,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94653314582054, -32.4228070972857],
             [-70.94713191748959, -32.42135899787695],
@@ -1252,26 +1273,26 @@ export const areas = {
             [-70.94891348808213, -32.421163115860594],
             [-70.94882114975742, -32.42128580238069],
             [-70.94802376456695, -32.423242840372154],
-            [-70.94653314582054, -32.4228070972857]
-          ]
+            [-70.94653314582054, -32.4228070972857],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "0112fa7e-6ef1-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 3",
-        "device": 3063,
-        "sector": 3,
-        "irrigating": false,
-        "crop": 3,
-        "failure": true
+      type: "Feature",
+      properties: {
+        id: "0112fa7e-6ef1-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 3",
+        device: 3063,
+        sector: 3,
+        irrigating: false,
+        crop: 3,
+        failure: true,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.9469573464144, -32.42124379096929],
             [-70.94641482841453, -32.42271929684246],
@@ -1291,26 +1312,26 @@ export const areas = {
             [-70.94714800922702, -32.42080888565345],
             [-70.94712503058244, -32.42102338242181],
             [-70.94709449322653, -32.421230842242],
-            [-70.9469573464144, -32.42124379096929]
-          ]
+            [-70.9469573464144, -32.42124379096929],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "1ee223e0-6ef1-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 3",
-        "device": 3063,
-        "sector": 3,
-        "irrigating": false,
-        "crop": 3,
-        "failure": true
+      type: "Feature",
+      properties: {
+        id: "1ee223e0-6ef1-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 3",
+        device: 3063,
+        sector: 3,
+        irrigating: false,
+        crop: 3,
+        failure: true,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94451594499563, -32.42048435582494],
             [-70.94491985380739, -32.419023555648536],
@@ -1319,26 +1340,26 @@ export const areas = {
             [-70.94580692765695, -32.420531894915236],
             [-70.94532699509932, -32.42056357518104],
             [-70.94478958164517, -32.4205160510444],
-            [-70.94451594499563, -32.42048435582494]
-          ]
+            [-70.94451594499563, -32.42048435582494],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "40f77520-6ef1-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 3",
-        "device": 3063,
-        "sector": 3,
-        "irrigating": false,
-        "crop": 3,
-        "failure": true
+      type: "Feature",
+      properties: {
+        id: "40f77520-6ef1-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 3",
+        device: 3063,
+        sector: 3,
+        irrigating: false,
+        crop: 3,
+        failure: true,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94495567908398, -32.41896201525658],
             [-70.94556535263496, -32.41827911106596],
@@ -1348,26 +1369,26 @@ export const areas = {
             [-70.94602314360647, -32.417702903048074],
             [-70.94712701062434, -32.41793505248641],
             [-70.94673549895808, -32.41933784769868],
-            [-70.94495567908398, -32.41896201525658]
-          ]
+            [-70.94495567908398, -32.41896201525658],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "6f44b6ea-6ef1-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 3",
-        "device": 3063,
-        "sector": 3,
-        "irrigating": false,
-        "crop": 3,
-        "failure": true
+      type: "Feature",
+      properties: {
+        id: "6f44b6ea-6ef1-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 3",
+        device: 3063,
+        sector: 3,
+        irrigating: false,
+        crop: 3,
+        failure: true,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94596522855348, -32.417617358579655],
             [-70.9459626252484, -32.41744051533797],
@@ -1385,26 +1406,26 @@ export const areas = {
             [-70.94708251879476, -32.41576902940392],
             [-70.94771216604921, -32.41593021647763],
             [-70.9471486720776, -32.417834069621925],
-            [-70.94596522855348, -32.417617358579655]
-          ]
+            [-70.94596522855348, -32.417617358579655],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "a906300c-6ef1-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 4",
-        "device": 3064,
-        "sector": 1,
-        "irrigating": false,
-        "crop": 4,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "a906300c-6ef1-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 4",
+        device: 3064,
+        sector: 1,
+        irrigating: false,
+        crop: 4,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95276450438104, -32.419958969594546],
             [-70.95281044732431, -32.419518126526306],
@@ -1429,26 +1450,26 @@ export const areas = {
             [-70.95332833657346, -32.41925732393861],
             [-70.95327900740767, -32.419576854230144],
             [-70.9530877582506, -32.41982380142148],
-            [-70.95276450438104, -32.419958969594546]
-          ]
+            [-70.95276450438104, -32.419958969594546],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "ccb40cae-6ef1-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 4",
-        "device": 3064,
-        "sector": 1,
-        "irrigating": false,
-        "crop": 4,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "ccb40cae-6ef1-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 4",
+        device: 3064,
+        sector: 1,
+        irrigating: false,
+        crop: 4,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.9542746451779, -32.41803788950348],
             [-70.95427391842621, -32.41808682372557],
@@ -1474,26 +1495,26 @@ export const areas = {
             [-70.95408597771954, -32.418077068824836],
             [-70.9541669550879, -32.41804771062473],
             [-70.9542441502759, -32.41801833142645],
-            [-70.9542746451779, -32.41803788950348]
-          ]
+            [-70.9542746451779, -32.41803788950348],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "173b3194-6ef2-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 4",
-        "device": 3064,
-        "sector": 2,
-        "irrigating": false,
-        "crop": 4,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "173b3194-6ef2-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 4",
+        device: 3064,
+        sector: 2,
+        irrigating: false,
+        crop: 4,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95225458993103, -32.41929669020629],
             [-70.9522544208553, -32.41932960084527],
@@ -1571,26 +1592,26 @@ export const areas = {
             [-70.95192623219057, -32.419189292763626],
             [-70.9521271479697, -32.41930476162699],
             [-70.95221555811447, -32.419284062398106],
-            [-70.95225458993103, -32.41929669020629]
-          ]
+            [-70.95225458993103, -32.41929669020629],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "4cea26ba-6ef2-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 4",
-        "device": 3064,
-        "sector": 2,
-        "irrigating": false,
-        "crop": 4,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "4cea26ba-6ef2-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 4",
+        device: 3064,
+        sector: 2,
+        irrigating: false,
+        crop: 4,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95124676607713, -32.41820736478853],
             [-70.95111695804002, -32.41807218984505],
@@ -1660,26 +1681,26 @@ export const areas = {
             [-70.9511081473893, -32.41772678358576],
             [-70.95112649591225, -32.41790842065895],
             [-70.95116716623464, -32.418042635338445],
-            [-70.95124676607713, -32.41820736478853]
-          ]
+            [-70.95124676607713, -32.41820736478853],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "70bb1afe-6ef2-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 4",
-        "device": 3064,
-        "sector": 3,
-        "irrigating": true,
-        "crop": 4,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "70bb1afe-6ef2-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 4",
+        device: 3064,
+        sector: 3,
+        irrigating: true,
+        crop: 4,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95212352252194, -32.41532863406156],
             [-70.95240715619998, -32.415228466881565],
@@ -1709,26 +1730,26 @@ export const areas = {
             [-70.95239812149936, -32.41559294905975],
             [-70.95243191511224, -32.41549320690453],
             [-70.95245187550944, -32.415399209778386],
-            [-70.95212352252194, -32.41532863406156]
-          ]
+            [-70.95212352252194, -32.41532863406156],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "988dae48-6ef2-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 4",
-        "device": 3064,
-        "sector": 3,
-        "irrigating": true,
-        "crop": 4,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "988dae48-6ef2-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 4",
+        device: 3064,
+        sector: 3,
+        irrigating: true,
+        crop: 4,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95327343026881, -32.414357975702245],
             [-70.95313993707128, -32.414660755625846],
@@ -1771,26 +1792,26 @@ export const areas = {
             [-70.95273833713235, -32.41439693598055],
             [-70.95308824171249, -32.414370681876925],
             [-70.95315700634109, -32.41433916333797],
-            [-70.95327343026881, -32.414357975702245]
-          ]
+            [-70.95327343026881, -32.414357975702245],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "e10f0504-6ef2-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 4",
-        "device": 3064,
-        "sector": 3,
-        "irrigating": true,
-        "crop": 4,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "e10f0504-6ef2-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 4",
+        device: 3064,
+        sector: 3,
+        irrigating: true,
+        crop: 4,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.95044578911369, -32.4122087868262],
             [-70.95039686734992, -32.413112699503344],
@@ -1838,26 +1859,26 @@ export const areas = {
             [-70.95022791476381, -32.41235420381975],
             [-70.95029737302184, -32.41226954468929],
             [-70.95036119983223, -32.41222467843638],
-            [-70.95044578911369, -32.4122087868262]
-          ]
+            [-70.95044578911369, -32.4122087868262],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "fe804706-6ef2-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 4",
-        "device": 3064,
-        "sector": 4,
-        "irrigating": false,
-        "crop": 4,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "fe804706-6ef2-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 4",
+        device: 3064,
+        sector: 4,
+        irrigating: false,
+        crop: 4,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94925208577091, -32.413011424329646],
             [-70.94933020683278, -32.41283256170457],
@@ -1873,26 +1894,26 @@ export const areas = {
             [-70.95055230760013, -32.41182518002261],
             [-70.9500139537939, -32.4124270565222],
             [-70.94963625586323, -32.412806031083086],
-            [-70.94925208577091, -32.413011424329646]
-          ]
+            [-70.94925208577091, -32.413011424329646],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "15eeeb04-6ef3-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 4",
-        "device": 3064,
-        "sector": 4,
-        "irrigating": false,
-        "crop": 4,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "15eeeb04-6ef3-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 4",
+        device: 3064,
+        sector: 4,
+        irrigating: false,
+        crop: 4,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94987329280747, -32.41144628574194],
             [-70.94989655495175, -32.411040061166666],
@@ -1911,26 +1932,26 @@ export const areas = {
             [-70.95002481406179, -32.4112484579034],
             [-70.95003055712046, -32.41133261147278],
             [-70.94998974337058, -32.41138206055434],
-            [-70.94987329280747, -32.41144628574194]
-          ]
+            [-70.94987329280747, -32.41144628574194],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "2dc74c76-6ef3-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 4",
-        "device": 3064,
-        "sector": 4,
-        "irrigating": false,
-        "crop": 4,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "2dc74c76-6ef3-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 4",
+        device: 3064,
+        sector: 4,
+        irrigating: false,
+        crop: 4,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94979666109924, -32.41038198303162],
             [-70.94990239319864, -32.41040153087661],
@@ -1958,26 +1979,26 @@ export const areas = {
             [-70.94911988479764, -32.411185148505055],
             [-70.94941655706104, -32.41090695437698],
             [-70.94966771007189, -32.41065251757742],
-            [-70.94979666109924, -32.41038198303162]
-          ]
+            [-70.94979666109924, -32.41038198303162],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "5bf03310-6ef3-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 4",
-        "device": 3064,
-        "sector": 5,
-        "irrigating": true,
-        "crop": 4,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "5bf03310-6ef3-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 4",
+        device: 3064,
+        sector: 5,
+        irrigating: true,
+        crop: 4,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94808059364136, -32.411742103481345],
             [-70.94813094027823, -32.411840482899],
@@ -2003,26 +2024,26 @@ export const areas = {
             [-70.94801275416897, -32.41203677569167],
             [-70.94798619219642, -32.41185408587449],
             [-70.94798499079407, -32.41173443002063],
-            [-70.94808059364136, -32.411742103481345]
-          ]
+            [-70.94808059364136, -32.411742103481345],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "e6dd7b90-6ef3-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 4",
-        "device": 3064,
-        "sector": 5,
-        "irrigating": true,
-        "crop": 4,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "e6dd7b90-6ef3-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 4",
+        device: 3064,
+        sector: 5,
+        irrigating: true,
+        crop: 4,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94817610482485, -32.41253850110403],
             [-70.94822648005604, -32.412695450721536],
@@ -2059,26 +2080,26 @@ export const areas = {
             [-70.94804194806255, -32.41238846985139],
             [-70.94804998054033, -32.41222382838328],
             [-70.94815902510771, -32.41230976603422],
-            [-70.94817610482485, -32.41253850110403]
-          ]
+            [-70.94817610482485, -32.41253850110403],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "05586c24-6ef4-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 4",
-        "device": 3064,
-        "sector": 5,
-        "irrigating": true,
-        "crop": 4,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "05586c24-6ef4-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 4",
+        device: 3064,
+        sector: 5,
+        irrigating: true,
+        crop: 4,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94714709149002, -32.41570972047213],
             [-70.94707049222058, -32.41560879508364],
@@ -2099,26 +2120,26 @@ export const areas = {
             [-70.9483538177916, -32.414715709383344],
             [-70.948174182432, -32.41576785923589],
             [-70.94810513700352, -32.41587151949524],
-            [-70.94714709149002, -32.41570972047213]
-          ]
+            [-70.94714709149002, -32.41570972047213],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "3b16228e-6ef4-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 5",
-        "device": 3065,
-        "sector": 1,
-        "irrigating": false,
-        "crop": 5,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "3b16228e-6ef4-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 5",
+        device: 3065,
+        sector: 1,
+        irrigating: false,
+        crop: 5,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.93724417496496, -32.42104324349465],
             [-70.93719578032521, -32.42081547087075],
@@ -2130,26 +2151,26 @@ export const areas = {
             [-70.94325382067551, -32.41941339839874],
             [-70.94262275053187, -32.42012846716991],
             [-70.94214857996187, -32.42049753879141],
-            [-70.93724417496496, -32.42104324349465]
-          ]
+            [-70.93724417496496, -32.42104324349465],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "4f62dd2c-6ef4-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 5",
-        "device": 3065,
-        "sector": 1,
-        "irrigating": false,
-        "crop": 5,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "4f62dd2c-6ef4-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 5",
+        device: 3065,
+        sector: 1,
+        irrigating: false,
+        crop: 5,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.93862041982801, -32.41860752325158],
             [-70.93859765913557, -32.41834548765752],
@@ -2164,26 +2185,26 @@ export const areas = {
             [-70.94276855735201, -32.41622595234269],
             [-70.94296505178905, -32.4168799152788],
             [-70.943114157432, -32.4180743276347],
-            [-70.93862041982801, -32.41860752325158]
-          ]
+            [-70.93862041982801, -32.41860752325158],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "668ea044-6ef4-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 5",
-        "device": 3065,
-        "sector": 2,
-        "irrigating": false,
-        "crop": 5,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "668ea044-6ef4-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 5",
+        device: 3065,
+        sector: 2,
+        irrigating: false,
+        crop: 5,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.93982942566312, -32.416184489555995],
             [-70.93978609807452, -32.41574098623331],
@@ -2203,26 +2224,26 @@ export const areas = {
             [-70.94251524088119, -32.41542017581292],
             [-70.94255774806098, -32.4156543922466],
             [-70.9425631042714, -32.41586271016646],
-            [-70.93982942566312, -32.416184489555995]
-          ]
+            [-70.93982942566312, -32.416184489555995],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "7e93fcde-6ef4-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 5",
-        "device": 3065,
-        "sector": 2,
-        "irrigating": false,
-        "crop": 5,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "7e93fcde-6ef4-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 5",
+        device: 3065,
+        sector: 2,
+        irrigating: false,
+        crop: 5,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94079860796755, -32.413823201600636],
             [-70.94069835477278, -32.41279723041691],
@@ -2237,26 +2258,26 @@ export const areas = {
             [-70.94237704065647, -32.41333883751766],
             [-70.94226503461319, -32.41337668607957],
             [-70.94231644429556, -32.413653694686715],
-            [-70.94079860796755, -32.413823201600636]
-          ]
+            [-70.94079860796755, -32.413823201600636],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "99d4edfa-6ef4-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 5",
-        "device": 3065,
-        "sector": 2,
-        "irrigating": false,
-        "crop": 5,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "99d4edfa-6ef4-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 5",
+        device: 3065,
+        sector: 2,
+        irrigating: false,
+        crop: 5,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94380068863623, -32.41348123762506],
             [-70.9425594906244, -32.41361675404865],
@@ -2274,26 +2295,26 @@ export const areas = {
             [-70.9440785498128, -32.41259003435455],
             [-70.94392163295491, -32.41294535657177],
             [-70.94387378097915, -32.413199848769665],
-            [-70.94380068863623, -32.41348123762506]
-          ]
+            [-70.94380068863623, -32.41348123762506],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "b374483c-6ef4-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 5",
-        "device": 3065,
-        "sector": 3,
-        "irrigating": true,
-        "crop": 5,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "b374483c-6ef4-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 5",
+        device: 3065,
+        sector: 3,
+        irrigating: true,
+        crop: 5,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94377415293312, -32.41355265611793],
             [-70.94384181851703, -32.414450067982926],
@@ -2309,26 +2330,26 @@ export const areas = {
             [-70.94252005219096, -32.414569146274836],
             [-70.94245778768205, -32.41387232735917],
             [-70.94256668231944, -32.41367861350316],
-            [-70.94377415293312, -32.41355265611793]
-          ]
+            [-70.94377415293312, -32.41355265611793],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "c7f0aaf8-6ef4-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 5",
-        "device": 3065,
-        "sector": 3,
-        "irrigating": true,
-        "crop": 5,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "c7f0aaf8-6ef4-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 5",
+        device: 3065,
+        sector: 3,
+        irrigating: true,
+        crop: 5,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.9437422987037, -32.41581169774364],
             [-70.94387131296271, -32.41603333027583],
@@ -2339,26 +2360,26 @@ export const areas = {
             [-70.94330730844715, -32.41683027477755],
             [-70.94314699143581, -32.41673331408015],
             [-70.9430692347356, -32.41589074886303],
-            [-70.9437422987037, -32.41581169774364]
-          ]
+            [-70.9437422987037, -32.41581169774364],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "dc016f46-6ef4-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 5",
-        "device": 3065,
-        "sector": 4,
-        "irrigating": false,
-        "crop": 5,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "dc016f46-6ef4-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 5",
+        device: 3065,
+        sector: 4,
+        irrigating: false,
+        crop: 5,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94440482555436, -32.416780387398425],
             [-70.94446560876588, -32.41696346393696],
@@ -2372,26 +2393,26 @@ export const areas = {
             [-70.9432624271343, -32.41739558970229],
             [-70.9432916919691, -32.41709392170758],
             [-70.94332767622383, -32.41689029440864],
-            [-70.94440482555436, -32.416780387398425]
-          ]
+            [-70.94440482555436, -32.416780387398425],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "ffc6c2e6-6ef4-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 5",
-        "device": 3065,
-        "sector": 4,
-        "irrigating": false,
-        "crop": 5,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "ffc6c2e6-6ef4-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 5",
+        device: 3065,
+        sector: 4,
+        irrigating: false,
+        crop: 5,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94369453708981, -32.418066134012896],
             [-70.94373199325726, -32.41812680709229],
@@ -2414,26 +2435,26 @@ export const areas = {
             [-70.94343221041433, -32.41967199640127],
             [-70.9434320269123, -32.41945371590816],
             [-70.94333900019738, -32.41814399964566],
-            [-70.94369453708981, -32.418066134012896]
-          ]
+            [-70.94369453708981, -32.418066134012896],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "241d7b94-6ef5-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 5",
-        "device": 3065,
-        "sector": 5,
-        "irrigating": true,
-        "crop": 5,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "241d7b94-6ef5-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 5",
+        device: 3065,
+        sector: 5,
+        irrigating: true,
+        crop: 5,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94456187233304, -32.41661676526494],
             [-70.94427944089944, -32.41644286203484],
@@ -2454,26 +2475,26 @@ export const areas = {
             [-70.94418620130739, -32.41515960889957],
             [-70.94444570475832, -32.415709028286386],
             [-70.94476210956371, -32.416115390297634],
-            [-70.94456187233304, -32.41661676526494]
-          ]
+            [-70.94456187233304, -32.41661676526494],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "3a8818e4-6ef5-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 5",
-        "device": 3065,
-        "sector": 5,
-        "irrigating": true,
-        "crop": 5,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "3a8818e4-6ef5-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 5",
+        device: 3065,
+        sector: 5,
+        irrigating: true,
+        crop: 5,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.9448403897088, -32.41226905107373],
             [-70.94485863981885, -32.412582009367355],
@@ -2490,26 +2511,26 @@ export const areas = {
             [-70.94433891779747, -32.41349313726573],
             [-70.94442311253789, -32.413119941374404],
             [-70.94463892875275, -32.41271208032524],
-            [-70.9448403897088, -32.41226905107373]
-          ]
+            [-70.9448403897088, -32.41226905107373],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "4bb795f4-6ef5-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 5",
-        "device": 3065,
-        "sector": 5,
-        "irrigating": true,
-        "crop": 5,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "4bb795f4-6ef5-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 5",
+        device: 3065,
+        sector: 5,
+        irrigating: true,
+        crop: 5,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94502980065523, -32.415293552481],
             [-70.94501362747346, -32.41547751698915],
@@ -2524,26 +2545,26 @@ export const areas = {
             [-70.94453786454935, -32.41520372302691],
             [-70.94482318742288, -32.41528410310554],
             [-70.94496818968625, -32.41523683380126],
-            [-70.94502980065523, -32.415293552481]
-          ]
+            [-70.94502980065523, -32.415293552481],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "667df48c-6ef5-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 5",
-        "device": 3065,
-        "sector": 6,
-        "irrigating": false,
-        "crop": 5,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "667df48c-6ef5-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 5",
+        device: 3065,
+        sector: 6,
+        irrigating: false,
+        crop: 5,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94499711766046, -32.415880918874485],
             [-70.9449810299594, -32.415762718873935],
@@ -2553,26 +2574,26 @@ export const areas = {
             [-70.94557449129928, -32.415769241359136],
             [-70.94542831853222, -32.41584803509207],
             [-70.94526670383927, -32.415880843587985],
-            [-70.94499711766046, -32.415880918874485]
-          ]
+            [-70.94499711766046, -32.415880918874485],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "7886832e-6ef5-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 5",
-        "device": 3065,
-        "sector": 6,
-        "irrigating": false,
-        "crop": 5,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "7886832e-6ef5-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 5",
+        device: 3065,
+        sector: 6,
+        irrigating: false,
+        crop: 5,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94567988533002, -32.41552904202206],
             [-70.94594146174914, -32.415625821361196],
@@ -2589,26 +2610,26 @@ export const areas = {
             [-70.94553467271365, -32.415893479734784],
             [-70.94567042559974, -32.41581170265417],
             [-70.94571553435094, -32.415710531474126],
-            [-70.94567988533002, -32.41552904202206]
-          ]
+            [-70.94567988533002, -32.41552904202206],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "8ec0dd38-6ef5-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 5",
-        "device": 3065,
-        "sector": 6,
-        "irrigating": false,
-        "crop": 5,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "8ec0dd38-6ef5-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 5",
+        device: 3065,
+        sector: 6,
+        irrigating: false,
+        crop: 5,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.9453225422646, -32.41637456921373],
             [-70.94540005935895, -32.416288586122235],
@@ -2637,26 +2658,26 @@ export const areas = {
             [-70.94493774654981, -32.41717044708898],
             [-70.94505933087385, -32.41682860041395],
             [-70.94517585227024, -32.41646564859712],
-            [-70.9453225422646, -32.41637456921373]
-          ]
+            [-70.9453225422646, -32.41637456921373],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "9e7fa754-6ef5-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 5",
-        "device": 3065,
-        "sector": 6,
-        "irrigating": false,
-        "crop": 5,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "9e7fa754-6ef5-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 5",
+        device: 3065,
+        sector: 6,
+        irrigating: false,
+        crop: 5,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94567334515402, -32.41671791695349],
             [-70.94592234853066, -32.416550123601155],
@@ -2669,26 +2690,26 @@ export const areas = {
             [-70.94670484651587, -32.416434755630675],
             [-70.94643118350737, -32.41670355082964],
             [-70.94607409855055, -32.41696638893424],
-            [-70.94567334515402, -32.41671791695349]
-          ]
+            [-70.94567334515402, -32.41671791695349],
+          ],
         ],
-        "type": "Polygon"
-      }
+        type: "Polygon",
+      },
     },
     {
-      "type": "Feature",
-      "properties": {
-        "id": "b7c447ba-6ef5-11ee-b962-0242ac120002",
-        "idMap": "b37fa27e-6ee8-11ee-b962-0242ac120002",
-        "deviceName": "LA VEGA BAJA EQ 5",
-        "device": 3065,
-        "sector": 6,
-        "irrigating": false,
-        "crop": 5,
-        "failure": false
+      type: "Feature",
+      properties: {
+        id: "b7c447ba-6ef5-11ee-b962-0242ac120002",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac120002",
+        deviceName: "LA VEGA BAJA EQ 5",
+        device: 3065,
+        sector: 6,
+        irrigating: false,
+        crop: 5,
+        failure: false,
       },
-      "geometry": {
-        "coordinates": [
+      geometry: {
+        coordinates: [
           [
             [-70.94559061756604, -32.41677910216301],
             [-70.94599328241534, -32.41698670270326],
@@ -2716,11 +2737,429 @@ export const areas = {
             [-70.9451952820463, -32.417863156502236],
             [-70.94533577913656, -32.41750532855412],
             [-70.94542594033733, -32.416981881995476],
-            [-70.94559061756604, -32.41677910216301]
-          ]
+            [-70.94559061756604, -32.41677910216301],
+          ],
         ],
-        "type": "Polygon"
-      }
-    }
-  ]
-}
+        type: "Polygon",
+      },
+    },
+  ],
+};
+
+export const areasUKCrops: AreasProps = {
+  type: "FeatureCollection",
+  features: [
+    {
+      type: "Feature",
+      properties: {
+        id: "a54d34b8-3db0-410d-955b-0627a4737d2b",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac879900",
+        deviceName: "UK-Crops DV 1",
+        device: 7010,
+        sector: 1,
+        irrigating: true,
+        crop: 3,
+        failure: false,
+      },
+      geometry: {
+        coordinates: [
+          [
+            [-0.8857536286671461, 50.88159144211619],
+            [-0.8878450688878559, 50.87767263699595],
+            [-0.8848029740206584, 50.87687284035559],
+            [-0.8819510100819912, 50.88091167301795],
+            [-0.8857536286671461, 50.88159144211619],
+          ],
+        ],
+        type: "Polygon",
+      },
+    },
+    {
+      type: "Feature",
+      properties: {
+        id: "2ed6c0ec-3449-49fa-9f0b-2138eb862b81",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac879900",
+        deviceName: "UK-Crops DV 1",
+        device: 7010,
+        sector: 1,
+        irrigating: true,
+        crop: 3,
+        failure: false,
+      },
+      geometry: {
+        coordinates: [
+          [
+            [-0.8821094525229398, 50.88103163299078],
+            [-0.8808736014831311, 50.88323084443442],
+            [-0.883820630886504, 50.88425044361003],
+            [-0.8855951862253164, 50.88165142126644],
+            [-0.8821094525229398, 50.88103163299078],
+          ],
+        ],
+        type: "Polygon",
+      },
+    },
+    {
+      type: "Feature",
+      properties: {
+        id: "6c268b81-5038-4fed-b2be-b9856879218b",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac879900",
+        deviceName: "UK-Crops DV 1",
+        device: 7010,
+        sector: 1,
+        irrigating: true,
+        crop: 3,
+        failure: false,
+      },
+      geometry: {
+        coordinates: [
+          [
+            [-0.8818533716309673, 50.88076530112022],
+            [-0.883308469103099, 50.878803102051904],
+            [-0.8832514064573331, 50.87864108192193],
+            [-0.8834511257178974, 50.87831703997247],
+            [-0.8841073461461235, 50.87754293063824],
+            [-0.883707907624995, 50.8773449006039],
+            [-0.8834225943946024, 50.87684082035412],
+            [-0.8839076268855592, 50.87660678124203],
+            [-0.8825381233825169, 50.87594066348959],
+            [-0.8814539331098672, 50.87579663677769],
+            [-0.8809689006189103, 50.8754365680509],
+            [-0.8796564597616054, 50.87518451828652],
+            [-0.8791143646257069, 50.876174705946994],
+            [-0.8780301743522045, 50.87630072832218],
+            [-0.8773168912774167, 50.87658877818453],
+            [-0.8771171720168525, 50.87640874722902],
+            [-0.8759188564518752, 50.87743491436032],
+            [-0.8795138031467786, 50.87970320362575],
+            [-0.8792284899171818, 50.88027925950851],
+            [-0.8818533716309673, 50.88076530112022],
+          ],
+        ],
+        type: "Polygon",
+      },
+    },
+    {
+      type: "Feature",
+      properties: {
+        id: "bfc70e2e-48ee-4242-838b-15ca1e822281",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac879900",
+        deviceName: "UK-Crops DV 1",
+        device: 7010,
+        sector: 1,
+        irrigating: true,
+        crop: 3,
+        failure: false,
+      },
+      geometry: {
+        coordinates: [
+          [
+            [-0.8777448611225793, 50.88189937849745],
+            [-0.8793426152095094, 50.87982921645846],
+            [-0.8758617938061377, 50.87759693868355],
+            [-0.8755764805765125, 50.878065005786965],
+            [-0.8756906058680158, 50.87822702791996],
+            [-0.875234104700354, 50.87856907279479],
+            [-0.8747205408868979, 50.878947119472144],
+            [-0.8756050118989833, 50.87923515297729],
+            [-0.8760329817441743, 50.87977521100029],
+            [-0.8765465455576589, 50.87993722718696],
+            [-0.8771171720168525, 50.88056728477929],
+            [-0.8774024852464493, 50.880783302563714],
+            [-0.8777448611225793, 50.88189937849745],
+          ],
+        ],
+        type: "Polygon",
+      },
+    },
+    {
+      type: "Feature",
+      properties: {
+        id: "8b2a7ffd-5b3b-4380-9ec8-70d5520d7e8e",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac879900",
+        deviceName: "UK-Crops DV 2",
+        device: 7011,
+        sector: 1,
+        irrigating: true,
+        crop: 1,
+        failure: false,
+      },
+      geometry: {
+        coordinates: [
+          [
+            [-0.8720169203208741, 50.885520218059156],
+            [-0.8714532034527167, 50.88338637037123],
+            [-0.8698747962237974, 50.88230162699557],
+            [-0.8667461676080563, 50.883670889043145],
+            [-0.8662951941138886, 50.88404431716319],
+            [-0.8647449727278627, 50.88416879253839],
+            [-0.8640121407991614, 50.886871604378086],
+            [-0.8645476718236296, 50.88713832072983],
+            [-0.8645194859807646, 50.88736947366624],
+            [-0.8640121407991614, 50.887582844589815],
+            [-0.8640403266428507, 50.88813404828471],
+            [-0.8660697073667905, 50.888062925594],
+            [-0.8671689552585917, 50.88772509132903],
+            [-0.8720169203208741, 50.885520218059156],
+          ],
+        ],
+        type: "Polygon",
+      },
+    },
+    {
+      type: "Feature",
+      properties: {
+        id: "fee72d1b-f7e9-4c5a-88c4-d8440727efe5",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac879900",
+        deviceName: "UK-Crops DV 2",
+        device: 7011,
+        sector: 1,
+        irrigating: true,
+        crop: 1,
+        failure: false,
+      },
+      geometry: {
+        coordinates: [
+          [
+            [-0.8636583443978623, 50.88820953760626],
+            [-0.8636301585542014, 50.887338278571946],
+            [-0.8606424591560824, 50.88751608786151],
+            [-0.8587258218053364, 50.88801395026229],
+            [-0.8562454675880247, 50.88762277310968],
+            [-0.8531321281114117, 50.8877571638063],
+            [-0.8517228359422688, 50.887508231898806],
+            [-0.8506235880504391, 50.8877571638063],
+            [-0.8520892519062215, 50.88909070494449],
+            [-0.8531884997980228, 50.88976635121611],
+            [-0.8541468184738221, 50.89021084999794],
+            [-0.8547669070277379, 50.89005083092502],
+            [-0.8561480133540158, 50.889055144343075],
+            [-0.857500933835837, 50.888432829420964],
+            [-0.858797482631843, 50.888077217161026],
+            [-0.8595303145597484, 50.88836170718591],
+            [-0.8601504031144316, 50.88850395154685],
+            [-0.860545004922102, 50.88878843896563],
+            [-0.861306022692844, 50.888663975933895],
+            [-0.8613905802231159, 50.88805943647705],
+            [-0.8636583443978623, 50.88820953760626],
+          ],
+        ],
+        type: "Polygon",
+      },
+    },
+    {
+      type: "Feature",
+      properties: {
+        id: "06c178ad-ede1-4f43-9f78-273db707aa94",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac879900",
+        deviceName: "UK-Crops DV 2",
+        device: 7011,
+        sector: 2,
+        irrigating: true,
+        crop: 1,
+        failure: false,
+      },
+      geometry: {
+        coordinates: [
+          [
+            [-0.8637863769109515, 50.88701036409367],
+            [-0.8644346513085566, 50.88416530312978],
+            [-0.8603758898615581, 50.88530334836477],
+            [-0.8571627037155736, 50.88638802185423],
+            [-0.8559225266069177, 50.88681477171423],
+            [-0.8564016859440073, 50.88749045099772],
+            [-0.8582901374510925, 50.88779272539864],
+            [-0.8637863769109515, 50.88701036409367],
+          ],
+        ],
+        type: "Polygon",
+      },
+    },
+    {
+      type: "Feature",
+      properties: {
+        id: "812103b9-0680-43bf-980d-f05b3a92a0a5",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac879900",
+        deviceName: "UK-Crops DV 2",
+        device: 7011,
+        sector: 3,
+        irrigating: true,
+        crop: 1,
+        failure: false,
+      },
+      geometry: {
+        coordinates: [
+          [
+            [-0.8530115814040471, 50.88996521438179],
+            [-0.851799590139052, 50.88944959268238],
+            [-0.8510103865237966, 50.88889840455414],
+            [-0.8499111386319953, 50.887867131829324],
+            [-0.8487837048964764, 50.887867131829324],
+            [-0.8466979524860108, 50.887618200509536],
+            [-0.8465288374254669, 50.88729814400111],
+            [-0.8452604744731502, 50.88733370594386],
+            [-0.8441330407384271, 50.887066990710764],
+            [-0.8435975097139874, 50.88729814400111],
+            [-0.8445840142326233, 50.888151623137304],
+            [-0.8461906073052319, 50.88889840455414],
+            [-0.847458970257577, 50.88969851421555],
+            [-0.8481636163417647, 50.889769634408964],
+            [-0.8485864039930959, 50.890071894020934],
+            [-0.8492628642343902, 50.890320812228055],
+            [-0.8530115814040471, 50.88996521438179],
+          ],
+        ],
+        type: "Polygon",
+      },
+    },
+    {
+      type: "Feature",
+      properties: {
+        id: "4d70f8d6-e7ef-4ce2-86c3-44211d930d12",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac879900",
+        deviceName: "UK-Crops DV 2",
+        device: 7011,
+        sector: 3,
+        irrigating: true,
+        crop: 1,
+        failure: false,
+      },
+      geometry: {
+        coordinates: [
+          [
+            [-0.8561336802170274, 50.88636132703482],
+            [-0.8569681324801479, 50.88605424594675],
+            [-0.8616619264595613, 50.884562680437654],
+            [-0.8576635093655227, 50.88210588020337],
+            [-0.857281052079145, 50.88254460403223],
+            [-0.8564118304608712, 50.88206200753717],
+            [-0.8535955540736211, 50.88429945798177],
+            [-0.8551601520667305, 50.88539620817028],
+            [-0.8548124636240857, 50.885659424373415],
+            [-0.8561336802170274, 50.88636132703482],
+          ],
+        ],
+        type: "Polygon",
+      },
+    },
+    {
+      type: "Feature",
+      properties: {
+        id: "6d5d03e9-5393-4bcf-9e62-1349bd3eaf15",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac879900",
+        deviceName: "UK-Crops DV 2",
+        device: 7011,
+        sector: 1,
+        irrigating: true,
+        crop: 1,
+        failure: false,
+      },
+      geometry: {
+        coordinates: [
+          [
+            [-0.8620096143916669, 50.88429945798177],
+            [-0.864582508869205, 50.88364139547525],
+            [-0.8644086646478968, 50.881403913427704],
+            [-0.862079152080014, 50.88175489810942],
+            [-0.8603059410218634, 50.88155746955104],
+            [-0.8587413430286972, 50.88230330638115],
+            [-0.8620096143916669, 50.88429945798177],
+          ],
+        ],
+        type: "Polygon",
+      },
+    },
+    {
+      type: "Feature",
+      properties: {
+        id: "4accf895-a07a-44a2-bbcf-7ae3c445bfbd",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac879900",
+        deviceName: "UK-Crops DV 3",
+        device: 7012,
+        sector: 1,
+        irrigating: true,
+        crop: 4,
+        failure: false,
+      },
+      geometry: {
+        coordinates: [
+          [
+            [-0.8932011087059948, 50.879880394305616],
+            [-0.8952110856837123, 50.879279661846766],
+            [-0.8961631963732657, 50.878245049667186],
+            [-0.8972739898066777, 50.87764429541829],
+            [-0.8968508437928904, 50.87704353098721],
+            [-0.8951053248379424, 50.87701015230664],
+            [-0.8932011190809135, 50.87744403445603],
+            [-0.8918258503436789, 50.8789459159816],
+            [-0.8932011087059948, 50.879880394305616],
+          ],
+        ],
+        type: "Polygon",
+      },
+    },
+    {
+      type: "Feature",
+      properties: {
+        id: "c2e50b62-5af1-47e2-b50f-2ca8678d1fdb",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac879900",
+        deviceName: "UK-Crops DV 3",
+        device: 7012,
+        sector: 1,
+        irrigating: true,
+        crop: 4,
+        failure: false,
+      },
+      geometry: {
+        coordinates: [
+          [
+            [-0.8955813447269634, 50.87931303609497],
+            [-0.8969036991578037, 50.879613402236515],
+            [-0.8975384330520342, 50.87944653252822],
+            [-0.9000244755777658, 50.88048111518583],
+            [-0.900553425072161, 50.88091496610883],
+            [-0.9025105413464587, 50.88118195129826],
+            [-0.9055255547914669, 50.88118195339777],
+            [-0.9066892752309457, 50.879313035228165],
+            [-0.9041503025168822, 50.87897929216777],
+            [-0.9006592286026205, 50.87864554815283],
+            [-0.8990723951888526, 50.878211675438735],
+            [-0.8974855720057917, 50.87737729060632],
+            [-0.8955813447269634, 50.87931303609497],
+          ],
+        ],
+        type: "Polygon",
+      },
+    },
+    {
+      type: "Feature",
+      properties: {
+        id: "7cb9c734-9eba-4518-a7c6-3cc6675cb052",
+        idMap: "b37fa27e-6ee8-11ee-b962-0242ac879900",
+        deviceName: "UK-Crops DV 3",
+        device: 7012,
+        sector: 1,
+        irrigating: true,
+        crop: 4,
+        failure: false,
+      },
+      geometry: {
+        coordinates: [
+          [
+            [-0.896670320377126, 50.88334887490123],
+            [-0.8984076561907557, 50.88283736461861],
+            [-0.9000291696165164, 50.88222841648388],
+            [-0.9003380293167709, 50.88118100707459],
+            [-0.8993342352913487, 50.88047460138782],
+            [-0.8988323382786234, 50.88137587572416],
+            [-0.8983690487289095, 50.88101049633784],
+            [-0.896670320377126, 50.880815626160114],
+            [-0.8956665263517323, 50.88115664843613],
+            [-0.896670320377126, 50.88334887490123],
+          ],
+        ],
+        type: "Polygon",
+      },
+    },
+  ],
+};

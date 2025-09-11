@@ -14,10 +14,10 @@ import {
 } from "../../utils/handleTooltipMap.ts";
 import FilterButtons from "../FilterButtons/FilterButtons.tsx";
 import { generateMarkers } from "../../utils/markers.ts";
-import { areas } from "../../data/areas/areas.ts";
 import { unitMarkers } from "../../data/unitsMarkers/unitsMarkers.ts";
 import { getInitialViewState } from '../../utils/handleMapSettings.ts'
 import { PropsMaps } from "../../data/map/map.ts";
+import { AreasProps } from "../../data/areas/areas.ts";
 
 const STYLE_MAP = {
   height: "calc(100vh - 180px)",
@@ -30,9 +30,10 @@ type StateFilter = [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 
 type Props = {
   currentMap : PropsMaps;
+  currentAreas: AreasProps;
 }
 
-export const MapCanvas: FC<Props> = ({ currentMap }) => {
+export const MapCanvas: FC<Props> = ({ currentMap, currentAreas }) => {
   const [filterByIrrigating, setFilterByIrrigating]: StateFilter =
     useState(false);
   const [filterByCrop, setFilterByCrop]: StateFilter = useState(false);
@@ -70,7 +71,7 @@ export const MapCanvas: FC<Props> = ({ currentMap }) => {
         style={STYLE_MAP}
         layers={[
           generateLayersMap(
-            areas,
+            currentAreas,
             filterByIrrigating,
             filterByCrop,
             showFailures
@@ -92,7 +93,7 @@ export const MapCanvas: FC<Props> = ({ currentMap }) => {
           if (event.object) {
             if (event.object.coordinates) return;
 
-            const sectorsHighlights = generateHighlightsLayersMap(areas, event.object) // set highlights
+            const sectorsHighlights = generateHighlightsLayersMap(currentAreas, event.object) // set highlights
             setHighlights(sectorsHighlights);
 
           } else {

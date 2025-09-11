@@ -1,11 +1,10 @@
 import { GeoJsonLayer } from 'deck.gl/typed';
-import { AreasProps, DataAreas } from '../types/Areas-types/types';
+import { DataAreas, AreasProps as SubAreasProps } from '../types/Areas-types/types';
 import { handleColorAreas, handleLineColor, handleLineWidth } from '../utils/handleColorCrops';
+import { AreasProps } from '../data/areas/areas';
 
-type ColorArea = [number, number, number, number]
-
-export const generateLayersMap = (dataAreas: DataAreas, filterByIrrigating: boolean, filterByCrop: boolean, showFailures: boolean) => {
-  return dataAreas.features.map((area: AreasProps) => {
+export const generateLayersMap = (currentAreas: AreasProps, filterByIrrigating: boolean, filterByCrop: boolean, showFailures: boolean) => {
+  return currentAreas.features.map((area: SubAreasProps) => {
 
     return new GeoJsonLayer({
       id: `${area.properties.deviceName}-sector_${area.properties.sector}-ID_${area.properties.id}`,
@@ -20,13 +19,13 @@ export const generateLayersMap = (dataAreas: DataAreas, filterByIrrigating: bool
   })
 }
 
-export const generateHighlightsLayersMap = (dataAreas: DataAreas, object: AreasProps) => {
-  const foundAreas = dataAreas.features.filter((areas: AreasProps) => 
+export const generateHighlightsLayersMap = (currentAreas: DataAreas, object: SubAreasProps) => {
+  const foundAreas = currentAreas.features.filter((areas: SubAreasProps) => 
     areas.properties.sector === object.properties.sector &&
     areas.properties.deviceName === object.properties.deviceName
   );
 
-  return foundAreas.map((area: AreasProps) => {
+  return foundAreas.map((area: SubAreasProps) => {
     return new GeoJsonLayer({
       id: `${area.properties.deviceName}-sector_${area.properties.sector}-ID_${area.properties.id}-highlights`,
       data: area,
