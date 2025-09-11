@@ -10,7 +10,7 @@ type Props = {
 export const LeftSide: FC<Props> = ({ currentMap, handleCurrentMap }) => {
   return (
     <div className="leftSide">
-      <h3>Maps</h3>
+      <h3 className="h3MapTitle">Maps</h3>
       <div className="listMaps">
         {maps.map((map) => {
           const disabled = currentMap.id === map.id ? true : false;

@@ -25,3 +25,10 @@
 .btnMapName.true {
   opacity: .5;
 }
+
+.h3MapTitle {
+  color: white;
+  text-align: center;
+  padding-top: 7px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
