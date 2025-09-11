@@ -106,7 +106,7 @@ export const MapCanvas: FC<Props> = ({ currentMap }) => {
           id="map"
           mapStyle={MAP_STYLE}
           mapboxAccessToken={MAPBOX_TOKEN}
-          minZoom={13}
+          minZoom={10}
           maxZoom={17}
         />
         <FilterButtons
