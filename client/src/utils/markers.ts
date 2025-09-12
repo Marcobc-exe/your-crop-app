@@ -1,7 +1,6 @@
 import { DataMarkers, MarkersProps } from '../types/Markers-types/types';
 import { IconLayer } from 'deck.gl/typed';
 import { PATTERNS } from '../constants/icons.ts';
-import { handleCursorMap } from './handleCursorMap.ts';
 
 const ICON_MAPPING = {
   "marker": { x: 0, y: 0, width: 512, height: 512 }

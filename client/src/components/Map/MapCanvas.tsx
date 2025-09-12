@@ -14,7 +14,7 @@ import {
 } from "../../utils/handleTooltipMap.ts";
 import FilterButtons from "../FilterButtons/FilterButtons.tsx";
 import { generateMarkers } from "../../utils/markers.ts";
-import { unitMarkers } from "../../data/unitsMarkers/unitsMarkers.ts";
+import { UnitProps } from "../../data/unitsMarkers/unitsMarkers.ts";
 import { getInitialViewState } from '../../utils/handleMapSettings.ts'
 import { PropsMaps } from "../../data/map/map.ts";
 import { AreasProps } from "../../data/areas/areas.ts";
@@ -31,9 +31,10 @@ type StateFilter = [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 type Props = {
   currentMap : PropsMaps;
   currentAreas: AreasProps;
+  currentUnits: UnitProps;
 }
 
-export const MapCanvas: FC<Props> = ({ currentMap, currentAreas }) => {
+export const MapCanvas: FC<Props> = ({ currentMap, currentAreas, currentUnits }) => {
   const [filterByIrrigating, setFilterByIrrigating]: StateFilter =
     useState(false);
   const [filterByCrop, setFilterByCrop]: StateFilter = useState(false);
@@ -76,7 +77,7 @@ export const MapCanvas: FC<Props> = ({ currentMap, currentAreas }) => {
             filterByCrop,
             showFailures
           ),
-          showUnits && generateMarkers(unitMarkers),
+          showUnits && generateMarkers(currentUnits),
           highlights,
         ]}
         getCursor={(event) => handleCursorMap(event)}

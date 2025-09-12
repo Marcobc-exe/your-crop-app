@@ -8,19 +8,23 @@ import { LeftSide } from "./components/LeftSide/LeftSide";
 import { useState } from "react";
 import { maps, PropsMaps } from "./data/map/map";
 import { areasVegaBaja, areasUKCrops } from "./data/areas/areas";
+import { unitsUKCrops, unitsVegaBaja } from "./data/unitsMarkers/unitsMarkers";
 
 const App = () => {
   const [currentMap, setCurrentMap] = useState<PropsMaps>(maps[0]);
   const [currentAreas, setCurrentAreas] = useState(areasVegaBaja);
+  const [currentUnits, setCurrentUnits] = useState(unitsVegaBaja);
 
   const handleCurrentMap = (id: string) => {
     const selectedMap = maps.find((map) => map.id === id);
     setCurrentMap(selectedMap);
-    
+
     if (selectedMap.id === areasUKCrops.features[0].properties.idMap) {
       setCurrentAreas(areasUKCrops);
+      setCurrentUnits(unitsUKCrops);
     } else {
       setCurrentAreas(areasVegaBaja);
+      setCurrentUnits(unitsVegaBaja);
     }
   };
 
@@ -35,8 +39,15 @@ const App = () => {
       >
         <LeftSide currentMap={currentMap} handleCurrentMap={handleCurrentMap} />
         <div className="rightSide">
-          <DeviceCountersBar currentMap={currentMap} />
-          <MapCanvas currentMap={currentMap} currentAreas={currentAreas} />
+          <DeviceCountersBar
+            currentMap={currentMap}
+            currentUnits={currentUnits}
+          />
+          <MapCanvas
+            currentMap={currentMap}
+            currentAreas={currentAreas}
+            currentUnits={currentUnits}
+          />
         </div>
       </Box>
     </Provider>

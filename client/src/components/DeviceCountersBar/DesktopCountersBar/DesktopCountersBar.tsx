@@ -3,10 +3,10 @@ import { CustomTooltip } from "../DeviceCountersBar";
 import "./desktopIndex.css";
 import { FC } from "react";
 import { PropsMaps } from "../../../data/map/map";
-import { UnitsProps } from "../../../data/units/units";
+import { UnitProps } from "../../../data/unitsMarkers/unitsMarkers";
 
 type Props = {
-  units: UnitsProps[];
+  units: UnitProps;
   isDesktop: boolean;
   currentMap: PropsMaps;
   totalIrrigating: number;
@@ -34,7 +34,7 @@ export const DesktopCountersBar: FC<Props> = ({
             <CustomTooltip title={"Total devices"} placement="top">
               <Box className="desktopSubBoxCounter">
                 <span>Total</span>
-                <span>{units.length}</span>
+                <span>{units.features.length}</span>
                 <div className="desktopStatusCounter total" />
               </Box>
             </CustomTooltip>

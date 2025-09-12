@@ -6,12 +6,11 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { UnitType } from "../../types/Units-types/types";
 import { FC, Suspense } from "react";
-import { units } from "../../data/units/units";
 import { DesktopCountersBar } from "./DesktopCountersBar/DesktopCountersBar";
 import { TabletCountersBar } from "./TabletCountersBar/TabletCountersBar";
 import { PropsMaps } from "../../data/map/map";
+import { Feature, UnitProps } from "../../data/unitsMarkers/unitsMarkers";
 
 export const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -29,26 +28,29 @@ export const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
 
 type Props = {
   currentMap: PropsMaps;
-}
+  currentUnits: UnitProps;
+};
 
-export const DeviceCountersBar: FC<Props> = ({ currentMap }) => {
+export const DeviceCountersBar: FC<Props> = ({ currentMap, currentUnits }) => {
   const theme = useTheme();
   // const isXs = useMediaQuery(theme.breakpoints.down("sm")); // <= 600px
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md")); // 600px–900px
   const isDesktop = useMediaQuery(theme.breakpoints.up("md")); // >= 900px
 
-  const totalIrrigating = units.filter(
-    (unit: UnitType) => unit.irrigating
+  const totalIrrigating = currentUnits.features.filter(
+    (unit: Feature) => unit.properties.irrigating
   ).length;
-  const totalNonIrrigating = units.filter(
-    (unit: UnitType) => !unit.connected
+  const totalNonIrrigating = currentUnits.features.filter(
+    (unit: Feature) => !unit.properties.connected
   ).length;
-  const totalFailure = units.filter((unit: UnitType) => unit.failure).length;
+  const totalFailure = currentUnits.features.filter(
+    (unit: Feature) => unit.properties.failure
+  ).length;
 
   return (
     <Suspense fallback={<h3>Loading...</h3>}>
       <DesktopCountersBar
-        units={units}
+        units={currentUnits}
         isDesktop={isDesktop}
         currentMap={currentMap}
         totalFailure={totalFailure}
@@ -56,7 +58,7 @@ export const DeviceCountersBar: FC<Props> = ({ currentMap }) => {
         totalNonIrrigating={totalNonIrrigating}
       />
       <TabletCountersBar
-        units={units}
+        units={currentUnits}
         isTablet={isTablet}
         currentMap={currentMap}
         totalFailure={totalFailure}
