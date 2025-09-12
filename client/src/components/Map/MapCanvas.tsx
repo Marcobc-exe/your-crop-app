@@ -2,7 +2,7 @@ import DeckGl from "@deck.gl/react/typed";
 import Map from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { MAP_STYLE, MAPBOX_TOKEN } from "../../config/configMap.ts";
-import { FC, Suspense, useState } from "react";
+import { FC, Suspense, useEffect, useState } from "react";
 import {
   generateHighlightsLayersMap,
   generateLayersMap,
@@ -63,6 +63,13 @@ export const MapCanvas: FC<Props> = ({ currentMap, currentAreas, currentUnits })
   const handleUnits = () => {
     setShowUnits((currentValue) => !currentValue);
   };
+
+  useEffect(() => {
+    setFilterByIrrigating(false);
+    setFilterByCrop(false);
+    setShowFailures(false);
+    setShowUnits(false);
+  }, [currentMap]);
 
   return (
     <Suspense fallback={<h2>Loading map...</h2>}>
