@@ -10,7 +10,14 @@ import { maps, PropsMaps } from "./data/map/map";
 import { areasVegaBaja, areasUKCrops } from "./data/areas/areas";
 import { unitsUKCrops, unitsVegaBaja } from "./data/unitsMarkers/unitsMarkers";
 
+const getMaps = async () => {
+  const res = await fetch('api/maps')
+  return await res.json();
+}
+
 const App = () => {
+  // const res = await getMaps();
+  // console.log(res);
   const [currentMap, setCurrentMap] = useState<PropsMaps>(maps[0]);
   const [currentAreas, setCurrentAreas] = useState(areasVegaBaja);
   const [currentUnits, setCurrentUnits] = useState(unitsVegaBaja);
