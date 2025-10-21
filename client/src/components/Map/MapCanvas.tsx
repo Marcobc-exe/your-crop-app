@@ -15,7 +15,7 @@ import {
 import FilterButtons from "../FilterButtons/FilterButtons.tsx";
 import { generateMarkers } from "../../utils/markers.ts";
 import { UnitProps } from "../../data/unitsMarkers/unitsMarkers.ts";
-import { getInitialViewState } from '../../utils/handleMapSettings.ts'
+import { getInitialViewState } from "../../utils/handleMapSettings.ts";
 import { PropsMaps } from "../../data/map/map.ts";
 import { AreasProps } from "../../data/areas/areas.ts";
 
@@ -29,18 +29,31 @@ const STYLE_MAP = {
 type StateFilter = [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 
 type Props = {
-  currentMap : PropsMaps;
+  currentMap: PropsMaps | object;
   currentAreas: AreasProps;
   currentUnits: UnitProps;
-}
+};
 
-export const MapCanvas: FC<Props> = ({ currentMap, currentAreas, currentUnits }) => {
+export const MapCanvas: FC<Props> = ({
+  currentMap,
+  currentAreas,
+  currentUnits,
+}) => {
   const [filterByIrrigating, setFilterByIrrigating]: StateFilter =
     useState(false);
   const [filterByCrop, setFilterByCrop]: StateFilter = useState(false);
   const [showUnits, setShowUnits]: StateFilter = useState(false);
   const [showFailures, setShowFailures]: StateFilter = useState(false);
   const [highlights, setHighlights] = useState([]);
+
+  useEffect(() => {
+    setFilterByIrrigating(false);
+    setFilterByCrop(false);
+    setShowFailures(false);
+    setShowUnits(false);
+  }, [currentMap]);
+
+  if (JSON.stringify(currentMap) === '{}') return;
 
   const handleIrrigating = () => {
     if (filterByCrop) setFilterByCrop(false);
@@ -64,71 +77,64 @@ export const MapCanvas: FC<Props> = ({ currentMap, currentAreas, currentUnits })
     setShowUnits((currentValue) => !currentValue);
   };
 
-  useEffect(() => {
-    setFilterByIrrigating(false);
-    setFilterByCrop(false);
-    setShowFailures(false);
-    setShowUnits(false);
-  }, [currentMap]);
-
   return (
-    <Suspense fallback={<h2>Loading map...</h2>}>
-      <DeckGl
-        initialViewState={getInitialViewState(currentMap)}
-        controller={true}
-        style={STYLE_MAP}
-        layers={[
-          generateLayersMap(
-            currentAreas,
-            filterByIrrigating,
-            filterByCrop,
-            showFailures
-          ),
-          showUnits && generateMarkers(currentUnits),
-          highlights,
-        ]}
-        getCursor={(event) => handleCursorMap(event)}
-        getTooltip={(info) => {
-          if (info.object) {
-            if (info.object.coordinates) {
-              return handleDeviceTooltip(info)
-            } else {
-              return handleTooltip(info.object)
-            }
-          }
-        }}
-        onHover={(event) => {
-          if (event.object) {
-            if (event.object.coordinates) return;
-
-            const sectorsHighlights = generateHighlightsLayersMap(currentAreas, event.object) // set highlights
-            setHighlights(sectorsHighlights);
-
+    <DeckGl
+      initialViewState={getInitialViewState(currentMap as PropsMaps)}
+      controller={true}
+      style={STYLE_MAP}
+      layers={[
+        generateLayersMap(
+          currentAreas,
+          filterByIrrigating,
+          filterByCrop,
+          showFailures
+        ),
+        showUnits && generateMarkers(currentUnits),
+        highlights,
+      ]}
+      getCursor={(event) => handleCursorMap(event)}
+      getTooltip={(info) => {
+        if (info.object) {
+          if (info.object.coordinates) {
+            return handleDeviceTooltip(info);
           } else {
-            if (highlights.length > 0) {
-              setHighlights([]);
-            }
+            return handleTooltip(info.object);
           }
-        }}
-      >
-        <Map
-          id="map"
-          mapStyle={MAP_STYLE}
-          mapboxAccessToken={MAPBOX_TOKEN}
-          minZoom={10}
-          maxZoom={17}
-        />
-        <FilterButtons
-          handleIrrigating={handleIrrigating}
-          handleCrops={handleCrops}
-          handleUnits={handleUnits}
-          handleFailure={handleFailure}
-          filterByIrrigating={filterByIrrigating}
-          filterByCrop={filterByCrop}
-          showUnits={showUnits}
-          showFailures={showFailures}
-        />
-      </DeckGl>
-    </Suspense>
+        }
+      }}
+      onHover={(event) => {
+        if (event.object) {
+          if (event.object.coordinates) return;
+
+          const sectorsHighlights = generateHighlightsLayersMap(
+            currentAreas,
+            event.object
+          ); // set highlights
+          setHighlights(sectorsHighlights);
+        } else {
+          if (highlights.length > 0) {
+            setHighlights([]);
+          }
+        }
+      }}
+    >
+      <Map
+        id="map"
+        mapStyle={MAP_STYLE}
+        mapboxAccessToken={MAPBOX_TOKEN}
+        minZoom={10}
+        maxZoom={17}
+      />
+      <FilterButtons
+        handleIrrigating={handleIrrigating}
+        handleCrops={handleCrops}
+        handleUnits={handleUnits}
+        handleFailure={handleFailure}
+        filterByIrrigating={filterByIrrigating}
+        filterByCrop={filterByCrop}
+        showUnits={showUnits}
+        showFailures={showFailures}
+      />
+    </DeckGl>
   );
 };

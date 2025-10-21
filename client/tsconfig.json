@@ -16,13 +16,14 @@
 
     /* Linting */
     "strict": false,
+    "types": ["vite/client"], 
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": false,
 
     "allowJs": false,
   },
-  "include": ["src/**/*.tsx", "src/**/*.d.ts"],
+  "include": ["src/**/*.tsx", "src/**/*.d.ts", "vite-env.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "exclude": ["node_modules"]
 }

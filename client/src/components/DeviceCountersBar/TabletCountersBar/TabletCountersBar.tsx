@@ -17,6 +17,7 @@ type Props = {
 export const TabletCountersBar: FC<Props> = ({
   units,
   isTablet,
+  currentMap,
   totalIrrigating,
   totalNonIrrigating,
   totalFailure,
@@ -26,7 +27,7 @@ export const TabletCountersBar: FC<Props> = ({
       {isTablet && (
         <Grid container direction={"row"} className="containerCounters">
           <Grid item className="boxTitle">
-            <span className="titleMap">La Vega Baja</span>
+            <span className="titleMap">{currentMap.name}</span>
           </Grid>
 
           <Grid item className="boxCounter">

@@ -27,7 +27,7 @@ export const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
 }));
 
 type Props = {
-  currentMap: PropsMaps;
+  currentMap: PropsMaps | object;
   currentUnits: UnitProps;
 };
 
@@ -46,13 +46,15 @@ export const DeviceCountersBar: FC<Props> = ({ currentMap, currentUnits }) => {
   const totalFailure = currentUnits.features.filter(
     (unit: Feature) => unit.properties.failure
   ).length;
+  if (JSON.stringify(currentMap) === "{}") return;
+
 
   return (
     <Suspense fallback={<h3>Loading...</h3>}>
       <DesktopCountersBar
         units={currentUnits}
         isDesktop={isDesktop}
-        currentMap={currentMap}
+        currentMap={currentMap as PropsMaps}
         totalFailure={totalFailure}
         totalIrrigating={totalIrrigating}
         totalNonIrrigating={totalNonIrrigating}
@@ -60,7 +62,7 @@ export const DeviceCountersBar: FC<Props> = ({ currentMap, currentUnits }) => {
       <TabletCountersBar
         units={currentUnits}
         isTablet={isTablet}
-        currentMap={currentMap}
+        currentMap={currentMap as PropsMaps}
         totalFailure={totalFailure}
         totalIrrigating={totalIrrigating}
         totalNonIrrigating={totalNonIrrigating}
