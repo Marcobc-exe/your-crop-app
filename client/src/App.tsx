@@ -1,6 +1,4 @@
-import { Provider } from "react-redux";
 import { MapCanvas } from "./components/Map/MapCanvas";
-import store from "./store";
 import { DeviceCountersBar } from "./components/DeviceCountersBar/DeviceCountersBar";
 import { Box } from "@mui/material";
 import "./app.css";
@@ -29,28 +27,26 @@ const App = () => {
   };
 
   return (
-    <Provider store={store}>
-      <Box
-        style={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "row",
-        }}
-      >
-        <LeftSide currentMap={currentMap} handleCurrentMap={handleCurrentMap} />
-        <div className="rightSide">
-          <DeviceCountersBar
-            currentMap={currentMap}
-            currentUnits={currentUnits}
-          />
-          <MapCanvas
-            currentMap={currentMap}
-            currentAreas={currentAreas}
-            currentUnits={currentUnits}
-          />
-        </div>
-      </Box>
-    </Provider>
+    <Box
+      style={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "row",
+      }}
+    >
+      <LeftSide currentMap={currentMap} handleCurrentMap={handleCurrentMap} />
+      <div className="rightSide">
+        <DeviceCountersBar
+          currentMap={currentMap}
+          currentUnits={currentUnits}
+        />
+        <MapCanvas
+          currentMap={currentMap}
+          currentAreas={currentAreas}
+          currentUnits={currentUnits}
+        />
+      </div>
+    </Box>
   );
 };
 

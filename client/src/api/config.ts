@@ -1,9 +1,10 @@
 import ax from "axios";
 
-const BASE_PATH: string = "../../public/data"
-// const BASE_PATH = "/data"
 
-export const axios = ax.create({
-  baseURL: BASE_PATH,
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+export const TASKS_API_URL = `${API_BASE_URL}/maps/api/v1/maps/`;
+
+export const api = ax.create({
+  baseURL: API_BASE_URL,
 });
 

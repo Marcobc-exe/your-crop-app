@@ -1,13 +1,9 @@
-import { axios } from "./config";
+import { api, TASKS_API_URL } from "./config";
 
-const getMap = async (urlMap: string) => {
+export const getAllMaps = async () => {
   try {
-    const response = await axios.get(`maps/${urlMap}`)
-
-    return response.data;
+    return await api.get(TASKS_API_URL);
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
-
-export default getMap;
+};
