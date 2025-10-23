@@ -1,0 +1,8 @@
+# Keep shell scripts as LF
+*.sh text eol=lf
+
+# Keep Python files as LF (optional but good)
+*.py text eol=lf
+
+# Allow Windows endings for docs if you like
+*.md text eol=crlf

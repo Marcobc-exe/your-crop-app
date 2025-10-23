@@ -1,0 +1,48 @@
+# Enviroment variables
+.env
+*.env
+*.key
+*.pem
+.env.production
+*.secret
+
+#OS junk
+_pycache_/
+*.pyc
+
+# Docker
+/pgdata
+*.pid
+*.log
+*.sock
+
+# Virtual environments
+venv/
+.envrc
+
+# Python virtual environments
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.pot
+*.pyc
+db.sqlite3
+
+# Django
+*.sqlite3
+/staticfiles/
+media/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+*.iml
