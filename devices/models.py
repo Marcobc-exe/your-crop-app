@@ -7,11 +7,6 @@ class Device(models.Model):
     on_delete=models.CASCADE,
     related_name='devices'
   )
-  areas = models.ManyToManyField(
-    'areas.Area',
-    related_name='devices',
-    blank=True
-  )
   name = models.CharField(max_length=100)
   device_num = models.IntegerField(null=True)
   lon = models.FloatField()
