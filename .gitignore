@@ -38,6 +38,8 @@ media/
 # System files
 .DS_Store
 Thumbs.db
+/store/
+/data/
 
 # IDEs and editors
 .vscode/
