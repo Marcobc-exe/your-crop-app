@@ -1,9 +1,10 @@
 # Enviroment variables
 .env
 *.env
+.env.*
+!.env.example
 *.key
 *.pem
-.env.production
 *.secret
 
 #OS junk
