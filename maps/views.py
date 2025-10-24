@@ -1,13 +1,7 @@
-# from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializer import MapSerializer
 from .models import Map
-
-# Create your views here.
-# class MapView(viewsets.ModelViewSet):
-#   serializer_class = MapSerializer
-#   queryset = Map.objects.all()
   
 @api_view(["GET"])
 def maps(request):
