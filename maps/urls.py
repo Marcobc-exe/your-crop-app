@@ -1,11 +1,8 @@
-from django.urls import path, include
-from rest_framework import routers
-from .views import MapView
-
-router = routers.DefaultRouter()
-router.register(r'maps', MapView, 'maps')
+from django.urls import path
+from .views import maps, map_id
 
 # api versioning
 urlpatterns = [
-  path('api/v1/', include(router.urls))
+  path('', maps, name='maps'),
+  path('<int:map_id>/', map_id, name='map_id'),
 ]

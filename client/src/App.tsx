@@ -32,10 +32,9 @@ const App = () => {
 
   const [currentMap, setCurrentMap] = useState<PropsMaps | object>({});
   const [currentAreas, setCurrentAreas] = useState(areasVegaBaja);
-  // const [currentUnits, setCurrentUnits] = useState(unitsVegaBaja);
 
   const fetchingMap = loadingMap(currentMap, isLoadingMap);
-  const fetchinMapList = loadingMapList(isLoadingMaps, isErrorMaps);
+  const fetchingMapList = loadingMapList(isLoadingMaps, isErrorMaps);
 
   const handleCurrentMap = (id: number) => {
     const selectedMap = mapList.find((map) => map.id === id);
@@ -52,7 +51,7 @@ const App = () => {
 
   useEffect(() => {
     if (map) {
-      setCurrentMap(map);
+      setCurrentMap(map[0]);
     }
   }, [map]);
 
@@ -64,12 +63,12 @@ const App = () => {
         flexDirection: "row",
       }}
     >
-      {fetchingMap || fetchinMapList ? (
+      {fetchingMap || fetchingMapList ? (
         <h1>Loading...</h1>
-      ) : isErrorMap || fetchinMapList ? (
-        <h1>
-          Error: {(errorMap as Error).message || (errorMaps as Error).message}
-        </h1>
+      ) : isErrorMap ? (
+        <h1>{`Error map: ${(errorMap as Error).message}`}</h1>
+      ) : errorMaps ? (
+        <h1>{`Error maps list: ${(errorMaps as Error).message}`}</h1>
       ) : (
         <>
           <LeftSide
@@ -77,13 +76,8 @@ const App = () => {
             handleCurrentMap={handleCurrentMap}
           />
           <div className="rightSide">
-            <DeviceCountersBar
-              currentMap={currentMap}
-            />
-            <MapCanvas
-              currentMap={currentMap}
-              currentAreas={currentAreas}
-            />
+            <DeviceCountersBar currentMap={currentMap} />
+            <MapCanvas currentMap={currentMap} currentAreas={currentAreas} />
           </div>
         </>
       )}

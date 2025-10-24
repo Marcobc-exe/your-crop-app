@@ -32,7 +32,7 @@ export const MapCanvas: FC<Props> = ({ currentMap, currentAreas }) => {
     isLoading: isLoadingDevices,
     isError: isErrorDevices,
     error: errorDevices,
-  } = useDevicesByMap((currentMap as PropsMaps).id);
+  } = useDevicesByMap((currentMap as PropsMaps).id || 1);
 
   const [filterByIrrigating, setFilterByIrrigating]: StateFilter =
     useState(false);

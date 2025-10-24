@@ -16,7 +16,7 @@ export const DeviceCountersBar: FC<Props> = ({ currentMap }) => {
     isLoading: isLoadingDevices,
     isError: isErrorDevices,
     error: errorDevices,
-  } = useDevicesByMap((currentMap as PropsMaps).id);
+  } = useDevicesByMap((currentMap as PropsMaps).id || 1);
   const theme = useTheme();
   // const isXs = useMediaQuery(theme.breakpoints.down("sm")); // <= 600px
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md")); // 600px–900px
