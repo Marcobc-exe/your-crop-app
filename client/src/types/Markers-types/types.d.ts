@@ -1,25 +1,23 @@
-export type DataMarkers = {
-  features: Array,
-  type: string
-}
-
-export type MarkersProps = {
+export type DevicesProps = {
   geometry: {
-    coordinates: [ string, string ],
-    type: string
-  },
+    coordinates: number[];
+    type: string;
+  };
   properties: {
-    markerId: string,
-    deviceId: number,
-    name: string,
-    connected: boolean,
-    failure: boolean,
-    irrigating: boolean,
-  }
-}
+    id: number;
+    mapId: number;
+    deviceNum: number;
+    name: string;
+    connected: boolean;
+    failure: boolean;
+    irrigating: boolean;
+    createdAt: Date;
+    updatedAt: Date;
+  };
+};
 
 export type MarkerTooltip = {
   layer: {
-    id: string,
-  }
-}
+    id: string;
+  };
+};

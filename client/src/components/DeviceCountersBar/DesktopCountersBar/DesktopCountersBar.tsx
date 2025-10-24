@@ -1,12 +1,11 @@
 import { Box, Grid } from "@mui/material";
-import { CustomTooltip } from "../DeviceCountersBar";
 import "./desktopIndex.css";
 import { FC } from "react";
 import { PropsMaps } from "../../../data/map/map";
-import { UnitProps } from "../../../data/unitsMarkers/unitsMarkers";
+import { CustomTooltip } from "../../CustomTooltip";
 
 type Props = {
-  units: UnitProps;
+  amountDevices: number;
   isDesktop: boolean;
   currentMap: PropsMaps;
   totalIrrigating: number;
@@ -15,7 +14,7 @@ type Props = {
 }
 
 export const DesktopCountersBar: FC<Props> = ({
-  units,
+  amountDevices,
   isDesktop,
   currentMap,
   totalIrrigating,
@@ -34,7 +33,7 @@ export const DesktopCountersBar: FC<Props> = ({
             <CustomTooltip title={"Total devices"} placement="top">
               <Box className="desktopSubBoxCounter">
                 <span>Total</span>
-                <span>{units.features.length}</span>
+                <span>{amountDevices}</span>
                 <div className="desktopStatusCounter total" />
               </Box>
             </CustomTooltip>

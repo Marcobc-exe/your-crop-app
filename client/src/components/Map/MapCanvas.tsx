@@ -2,7 +2,7 @@ import DeckGl from "@deck.gl/react/typed";
 import Map from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { MAP_STYLE, MAPBOX_TOKEN } from "../../config/configMap.ts";
-import { FC, Suspense, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import {
   generateHighlightsLayersMap,
   generateLayersMap,
@@ -14,31 +14,26 @@ import {
 } from "../../utils/handleTooltipMap.ts";
 import FilterButtons from "../FilterButtons/FilterButtons.tsx";
 import { generateMarkers } from "../../utils/markers.ts";
-import { UnitProps } from "../../data/unitsMarkers/unitsMarkers.ts";
 import { getInitialViewState } from "../../utils/handleMapSettings.ts";
 import { PropsMaps } from "../../data/map/map.ts";
 import { AreasProps } from "../../data/areas/areas.ts";
-
-const STYLE_MAP = {
-  height: "calc(100vh - 180px)",
-  width: "100%",
-  position: "relative",
-  borderRadius: "0 0 10px 0",
-};
-
-type StateFilter = [boolean, React.Dispatch<React.SetStateAction<boolean>>];
+import { useDevicesByMap } from "../../features/devices/devices.hook.ts";
+import { STYLE_MAP } from "../../constants/const.ts";
+import { StateFilter } from "../../types/ReactElements-types/types";
 
 type Props = {
   currentMap: PropsMaps | object;
   currentAreas: AreasProps;
-  currentUnits: UnitProps;
 };
 
-export const MapCanvas: FC<Props> = ({
-  currentMap,
-  currentAreas,
-  currentUnits,
-}) => {
+export const MapCanvas: FC<Props> = ({ currentMap, currentAreas }) => {
+  const {
+    data: devicesList,
+    isLoading: isLoadingDevices,
+    isError: isErrorDevices,
+    error: errorDevices,
+  } = useDevicesByMap((currentMap as PropsMaps).id);
+
   const [filterByIrrigating, setFilterByIrrigating]: StateFilter =
     useState(false);
   const [filterByCrop, setFilterByCrop]: StateFilter = useState(false);
@@ -53,7 +48,8 @@ export const MapCanvas: FC<Props> = ({
     setShowUnits(false);
   }, [currentMap]);
 
-  if (JSON.stringify(currentMap) === '{}') return;
+  if (JSON.stringify(currentMap) === "{}" && isLoadingDevices) return;
+  if (isErrorDevices) return <p>Error devices: {errorDevices.message}</p>;
 
   const handleIrrigating = () => {
     if (filterByCrop) setFilterByCrop(false);
@@ -89,7 +85,7 @@ export const MapCanvas: FC<Props> = ({
           filterByCrop,
           showFailures
         ),
-        showUnits && generateMarkers(currentUnits),
+        showUnits && generateMarkers(devicesList),
         highlights,
       ]}
       getCursor={(event) => handleCursorMap(event)}

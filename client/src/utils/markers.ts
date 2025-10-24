@@ -1,12 +1,12 @@
-import { DataMarkers, MarkersProps } from '../types/Markers-types/types';
+import { DevicesProps } from '../types/Markers-types/types';
 import { IconLayer } from 'deck.gl/typed';
 import { ICON_MAPPING, PATTERNS } from '../constants/icons.ts';
 
-const generateMarkers = (dataMarkers: DataMarkers) => {
-  const markersIcons = dataMarkers.features.map((marker: MarkersProps) => {
+export const generateMarkers = (devicesList: DevicesProps[]) => {
+  return devicesList.map((unit: DevicesProps) => {
     return new IconLayer({
-      id: `name:${marker.properties.name};id:${marker.properties.deviceId};connected:${marker.properties.connected};irrigating:${marker.properties.irrigating};failure:${marker.properties.failure}`,
-      data: [marker.geometry, marker.properties],
+      id: `name:${unit.properties.name};id:${unit.properties.id}`,
+      data: [unit.geometry, unit.properties],
       pickable: true, // true
       iconAtlas: PATTERNS.markerUnit,
       iconMapping: ICON_MAPPING,
@@ -16,11 +16,7 @@ const generateMarkers = (dataMarkers: DataMarkers) => {
       sizeUnits: "meters",
       sizeMinPixels: 3,
       getSize: () => 8,
-      // onClick: () => console.log(marker.properties.name),
+      // onClick: () => console.log(unit.properties.name),
     })
   });
-
-  return markersIcons;
 }
-
-export { generateMarkers };

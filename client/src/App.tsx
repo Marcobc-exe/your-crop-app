@@ -6,7 +6,6 @@ import { LeftSide } from "./components/LeftSide/LeftSide";
 import { useEffect, useState } from "react";
 import { PropsMaps } from "./data/map/map";
 import { areasVegaBaja, areasUKCrops } from "./data/areas/areas";
-import { unitsUKCrops, unitsVegaBaja } from "./data/unitsMarkers/unitsMarkers";
 import { useAllMaps, useMap } from "./features/maps/maps.hook";
 
 function loadingMap(currentMap: PropsMaps | object, isLoadingMap: boolean) {
@@ -33,7 +32,7 @@ const App = () => {
 
   const [currentMap, setCurrentMap] = useState<PropsMaps | object>({});
   const [currentAreas, setCurrentAreas] = useState(areasVegaBaja);
-  const [currentUnits, setCurrentUnits] = useState(unitsVegaBaja);
+  // const [currentUnits, setCurrentUnits] = useState(unitsVegaBaja);
 
   const fetchingMap = loadingMap(currentMap, isLoadingMap);
   const fetchinMapList = loadingMapList(isLoadingMaps, isErrorMaps);
@@ -80,12 +79,10 @@ const App = () => {
           <div className="rightSide">
             <DeviceCountersBar
               currentMap={currentMap}
-              currentUnits={currentUnits}
             />
             <MapCanvas
               currentMap={currentMap}
               currentAreas={currentAreas}
-              currentUnits={currentUnits}
             />
           </div>
         </>

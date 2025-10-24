@@ -1,58 +1,44 @@
-import {
-  Tooltip,
-  TooltipProps,
-  styled,
-  tooltipClasses,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 import { FC, Suspense } from "react";
 import { DesktopCountersBar } from "./DesktopCountersBar/DesktopCountersBar";
 import { TabletCountersBar } from "./TabletCountersBar/TabletCountersBar";
 import { PropsMaps } from "../../data/map/map";
-import { Feature, UnitProps } from "../../data/unitsMarkers/unitsMarkers";
-
-export const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
-  <Tooltip {...props} classes={{ popper: className }} />
-))(({ theme }) => ({
-  [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: "#2f3542",
-    color: "rgba(255, 255, 255, 0.7)",
-    maxWidth: 120,
-    fontSize: theme.typography.pxToRem(12),
-    border: "1px solid #dadde9",
-    position: "relative",
-    top: "38px",
-  },
-}));
+import { useDevicesByMap } from "../../features/devices/devices.hook";
+import { DevicesProps } from "../../types/Markers-types/types";
 
 type Props = {
   currentMap: PropsMaps | object;
-  currentUnits: UnitProps;
 };
 
-export const DeviceCountersBar: FC<Props> = ({ currentMap, currentUnits }) => {
+export const DeviceCountersBar: FC<Props> = ({ currentMap }) => {
+  const {
+    data: devicesList,
+    isLoading: isLoadingDevices,
+    isError: isErrorDevices,
+    error: errorDevices,
+  } = useDevicesByMap((currentMap as PropsMaps).id);
   const theme = useTheme();
   // const isXs = useMediaQuery(theme.breakpoints.down("sm")); // <= 600px
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md")); // 600px–900px
   const isDesktop = useMediaQuery(theme.breakpoints.up("md")); // >= 900px
 
-  const totalIrrigating = currentUnits.features.filter(
-    (unit: Feature) => unit.properties.irrigating
-  ).length;
-  const totalNonIrrigating = currentUnits.features.filter(
-    (unit: Feature) => !unit.properties.connected
-  ).length;
-  const totalFailure = currentUnits.features.filter(
-    (unit: Feature) => unit.properties.failure
-  ).length;
-  if (JSON.stringify(currentMap) === "{}") return;
+  if (isLoadingDevices) return;
+  if (isErrorDevices) return <p>Error devices: {errorDevices.message}</p>;
 
+  const totalIrrigating = devicesList.filter(
+    (unit: DevicesProps) => unit.properties.irrigating
+  ).length;
+  const totalNonIrrigating = devicesList.filter(
+    (unit: DevicesProps) => !unit.properties.connected
+  ).length;
+  const totalFailure = devicesList.filter(
+    (unit: DevicesProps) => unit.properties.failure
+  ).length;
 
   return (
     <Suspense fallback={<h3>Loading...</h3>}>
       <DesktopCountersBar
-        units={currentUnits}
+        amountDevices={devicesList.length}
         isDesktop={isDesktop}
         currentMap={currentMap as PropsMaps}
         totalFailure={totalFailure}
@@ -60,7 +46,7 @@ export const DeviceCountersBar: FC<Props> = ({ currentMap, currentUnits }) => {
         totalNonIrrigating={totalNonIrrigating}
       />
       <TabletCountersBar
-        units={currentUnits}
+        amountDevices={devicesList.length}
         isTablet={isTablet}
         currentMap={currentMap as PropsMaps}
         totalFailure={totalFailure}

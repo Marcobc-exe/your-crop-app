@@ -1,4 +1,4 @@
-import {z} from "zod";
+import { z } from "zod";
 
 export const DeviceSchema = z.object({
   id: z.number(),
@@ -17,8 +17,8 @@ export const DeviceSchema = z.object({
 export const DeviceSchemaTransform = DeviceSchema.transform((dto) => {
   return {
     geometry: {
-      coordinates: [dto.lon.toString(), dto.lat.toString()],
-      type: "Point"
+      coordinates: [dto.lat, dto.lon],
+      type: "Point",
     },
     properties: {
       id: dto.id,
@@ -30,8 +30,8 @@ export const DeviceSchemaTransform = DeviceSchema.transform((dto) => {
       irrigating: dto.irrigating,
       createdAt: new Date(dto.created_at),
       updatedAt: new Date(dto.updated_at),
-    }
-  }
+    },
+  };
 });
 
 export const DeviceListSchema = z.array(DeviceSchemaTransform);
