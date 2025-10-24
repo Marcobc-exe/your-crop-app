@@ -1,6 +1,9 @@
 export type CropsType = {
-  cropId: number;
-  cropName: string;
+  id: number;
+  name: string;
+  color: number[];
+  created_at: string;
+  updated_at: string;
 };
 
 export type ArrCropsType = [

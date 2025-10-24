@@ -20,6 +20,7 @@ import { AreasProps } from "../../data/areas/areas.ts";
 import { useDevicesByMap } from "../../features/devices/devices.hook.ts";
 import { STYLE_MAP } from "../../constants/const.ts";
 import { StateFilter } from "../../types/ReactElements-types/types";
+import { useAllCrops } from "../../features/crops/crops.hook.ts";
 
 type Props = {
   currentMap: PropsMaps | object;
@@ -33,6 +34,12 @@ export const MapCanvas: FC<Props> = ({ currentMap, currentAreas }) => {
     isError: isErrorDevices,
     error: errorDevices,
   } = useDevicesByMap((currentMap as PropsMaps).id || 1);
+  const {
+    data: cropsList,
+    isLoading: isLoadingCrops,
+    isError: isErrorCrops,
+    error: errorCrops,
+  } = useAllCrops();
 
   const [filterByIrrigating, setFilterByIrrigating]: StateFilter =
     useState(false);
@@ -48,8 +55,9 @@ export const MapCanvas: FC<Props> = ({ currentMap, currentAreas }) => {
     setShowUnits(false);
   }, [currentMap]);
 
-  if (JSON.stringify(currentMap) === "{}" && isLoadingDevices) return;
+  if (JSON.stringify(currentMap) === "{}" || isLoadingDevices || isLoadingCrops) return;
   if (isErrorDevices) return <p>Error devices: {errorDevices.message}</p>;
+  if (isErrorCrops) return <p>Error crops: {errorCrops.message}</p>;
 
   const handleIrrigating = () => {
     if (filterByCrop) setFilterByCrop(false);
@@ -81,6 +89,7 @@ export const MapCanvas: FC<Props> = ({ currentMap, currentAreas }) => {
       layers={[
         generateLayersMap(
           currentAreas,
+          cropsList,
           filterByIrrigating,
           filterByCrop,
           showFailures
