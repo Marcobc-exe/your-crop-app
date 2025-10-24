@@ -1,10 +1,6 @@
 import { DataMarkers, MarkersProps } from '../types/Markers-types/types';
 import { IconLayer } from 'deck.gl/typed';
-import { PATTERNS } from '../constants/icons.ts';
-
-const ICON_MAPPING = {
-  "marker": { x: 0, y: 0, width: 512, height: 512 }
-};
+import { ICON_MAPPING, PATTERNS } from '../constants/icons.ts';
 
 const generateMarkers = (dataMarkers: DataMarkers) => {
   const markersIcons = dataMarkers.features.map((marker: MarkersProps) => {
