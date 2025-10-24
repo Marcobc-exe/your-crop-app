@@ -1,7 +1,7 @@
-from rest_framework.routers import DefaultRouter
-from .views import CropView
+from django.urls import path
+from .views import crops, crop_by_id
 
-router = DefaultRouter()
-router.register(r'crops', CropView, basename='crops')
-
-urlpatterns = router.urls
+urlpatterns = [
+  path('', crops, name='crops'),
+  path('<int:crop_id>/', crop_by_id, name='crop_by_id'),
+]
